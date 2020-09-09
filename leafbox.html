@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8' />
+	<title>Kommuner</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
+	<script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet'/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"/>
+	<link href="styles.css" rel="stylesheet" type="text/css">
+	<script src="sv_kommuner.js"></script>
+    <script src="platser.js"></script>
+</head>
+<body>
+    <div id='map'></div>
+    <div class="bottom-left">
+        <div class="legend">
+
+            <div class="legend-title">How does population density correspond with location of places?</div>
+
+            <div class="legend-radiobuttons">
+                <input type="radio" id="placeChoice1" name="place" value="Systembolaget" onclick="myFunction1()"><label for="placeChoice1">Systembolaget</label> <br>
+                <input type="radio" id="placeChoice2" name="place" value="MAX" onclick="myFunction2()"><label for="placeChoice2">MAX</label>
+            </div>
+
+            <div class="legend-popdensity">
+                <span class="legend-popdensity-title">population density (inhabitant per km²)</span>
+            </div>
+        </div>
+    </div>
+    <script src="mapbox_overlay.js"></script>
+    <script src="map_markers.js"></script>
+    <script src="legendconsole.js"></script>
+</body>
+</html>
+
