@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Map project</title>
+    <meta charset='utf-8' />
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
+	<script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet'/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"/>
+	<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id='map'></div>
+    <div class="bottom-left">
+        <div class="legend">
+            <div class="legend-title">How does population density correlate with location of places?</div>
+            <div class="legend-radiobuttons">
+                <div><input type="radio" id="ikeaRadio" name="place" value="ikea" onclick="showLocations('ikea')"><label for="ikeaRadio">IKEA</label></div>
+                <div><input type="radio" id="policestationsRadio" name="place" value="policestations" onclick="showLocations('police')"><label for="policestationsRadio">Police station</label></div>
+                <div><input type="radio" id="icamaxiRadio" name="place" value="icamaxi" onclick="showLocations('ica')"><label for="icamaxiRadio">ICA Maxi</label></div>
+                <div><input type="radio" id="kronansRadio" name="place" value="kronans" onclick="showLocations('kronans')"><label for="kronansRadio">Pharmacy (Kronans)</label></div>
+                <div><input type="radio" id="maxhamburgersRadio" name="place" value="maxhamburgers" onclick="showLocations('max')"><label for="maxhamburgersRadio">MAX hamburgers</label></div>
+            </div>
+            <select class="legend-dropdown"> 
+                <option value="" selected="selected">Select</option> 
+                <option value="ikea" onclick="showLocations('ikea')">IKEA</option> 
+                <option value="policestations" onclick="showLocations('police')">Police station</option> 
+                <option value="icamaxi" onclick="showLocations('ica')">ICA Maxi</option> 
+                <option value="kronans" onclick="showLocations('kronans')">Pharmacy (Kronans)</option> 
+                <option value="maxhamburgers" onclick="showLocations('max')">MAX hamburgers</option> 
+              </select> 
+            <div class="legend-popdensity"><span class="legend-popdensity-title">population density (inhabitant per km²)</span></div>
+        </div>
+    </div>
+    <script src="sv_kommuner.js"></script>
+    <script src="mapbox_overlay.js"></script>
+    <script src="map_markers.js"></script>
+    <script src="legendconsole.js"></script>
+    <script src="locations/max_location_data.js"></script>
+    <script src="locations/ica_location_data.js"></script>
+    <script src="locations/police_location_data.js"></script>
+    <script src="locations/ikea_location_data.js"></script>
+    <script src="locations/kronans_location_data.js"></script>
+</body>
+</html>
+

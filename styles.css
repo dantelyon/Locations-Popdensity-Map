@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 #map {
   position: absolute;
   top: 0;
@@ -19,61 +20,80 @@ body {
   border-color: rgba(0,0,0,0.5);
   display: block;
 }
+
 .leaflet-bar a:hover{
   background-color: #69717d;
   border: 1px solid #69717d;
 }
+
 .leaflet-bar a.leaflet-disabled {
   background-color: #424347;
 }
 
 .bottom-left {
   bottom: 0;
-    position: absolute;
-    z-index: 1000;
+  position: absolute;
+  z-index: 1000;
 }
+
 .legend-title {
-    font-weight: bold;
+  font-weight: bold;
 }
-.legend-radiobuttons {
-    pointer-events: auto;
+
+.legend-radiobuttons, .legend-dropdown {
+  pointer-events: auto;
 }
+
 .legend ul {
   padding: 0;
   margin: 0;
 }
+
 .legend-popdensity-title {
-    font-size: 11px;
+  font-size: 11px;
 }
+
 .legend ul {
-    list-style: none;
+  list-style: none;
 }
+
 .legend li {
-    width: 13.5%;
-    float: left;
+  width: 13.5%;
+  float: left;
 }
+
 .legend .legend-popdensity-color {
-    width: 100%;
-    height: 10px;
-    display: inline-block;
+  width: 100%;
+  height: 10px;
+  display: inline-block;
 }
+
 .legend .legend-popdensity-inhabitants {
-    text-align: center;
-    font-size: 11px;
-    color: #989ba0;
+  text-align: center;
+  font-size: 11px;
+  color: #989ba0;
 }
+
 .legend {
   pointer-events: none;
   font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #fff;
-    margin: 10px;
-    background: #424347;
-    bottom: 50px;
-    width: 400px;
-    border-radius: 4px;
-    position: absolute;
-    z-index: 9999;
-    padding: 10px 15px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.25);
-    box-sizing: border-box;
+  margin: 10px;
+  background: #424347;
+  bottom: 50px;
+  width: 400px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 9999;
+  padding: 10px 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  box-sizing: border-box;
+}
+
+.legend-dropdown {display: none;}
+
+@media (max-width: 440px) {
+  .legend {width: 300px;}
+  .legend-radiobuttons {display: none;}
+  .legend-dropdown {display: inline-block !important;}
 }

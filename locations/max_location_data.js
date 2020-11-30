@@ -1,5 +1,6 @@
 
-const maxrest = [
+// do not change var to const or let; it will break the showLocations function.
+var maxLocations = [
     [55.56336589308838,12.971842536796203],
     [55.547851235133905,13.03351879119873],
     [55.572752543337764,13.038368225097656],

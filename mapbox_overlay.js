@@ -1,11 +1,14 @@
 
-var mapboxAccessToken = 'pk.eyJ1IjoiZGlnaHQiLCJhIjoiY2p4ZW5nanRjMG9wMzNvczhxOXprMXl4NiJ9.fmrU8kIKNnTnb6KyJ9Y1Hw';
+const mapboxAccessToken = 'pk.eyJ1IjoiZGlnaHQiLCJhIjoiY2p4ZW5nanRjMG9wMzNvczhxOXprMXl4NiJ9.fmrU8kIKNnTnb6KyJ9Y1Hw';
+const mapStyle = 'https://api.mapbox.com/styles/v1/dight/cjxstuxwc1p4e1cn9oki15fey/tiles/256/{z}/{x}/{y}?access_token=' + mapboxAccessToken
+const mapAttribution = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
 
-var map = L.map('map').setView([59.372, 14.767], 6);
+let map = L.map('map').setView([59.372, 14.767], 6);
 
-L.tileLayer('https://api.mapbox.com/styles/v1/dight/cjxstuxwc1p4e1cn9oki15fey/tiles/256/{z}/{x}/{y}?access_token=' + mapboxAccessToken, {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 8, minZoom: 5,
+L.tileLayer(mapStyle, {
+    attribution: mapAttribution,
+    maxZoom: 8,
+    minZoom: 5,
 }).addTo(map);
 
 L.geoJson(statesData).addTo(map);
@@ -21,6 +24,7 @@ function layer_style(feature) {
         fillOpacity: 1,
     };
 }
+
 function getColor(d) {
     return d > 1000 ? '#8c2d04' : 
            d > 200  ? '#d94801' :
