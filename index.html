@@ -7,8 +7,6 @@
 	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
 	<script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet'/>
-    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"/>
 	<link href="styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -17,32 +15,56 @@
         <div class="legend">
             <div class="legend-title">How does population density correlate with location of places?</div>
             <div class="legend-radiobuttons">
-                <div><input type="radio" id="ikeaRadio" name="place" value="ikea" onclick="showLocations('ikea')"><label for="ikeaRadio">IKEA</label></div>
-                <div><input type="radio" id="policestationsRadio" name="place" value="policestations" onclick="showLocations('police')"><label for="policestationsRadio">Police station</label></div>
-                <div><input type="radio" id="icamaxiRadio" name="place" value="icamaxi" onclick="showLocations('ica')"><label for="icamaxiRadio">ICA Maxi</label></div>
-                <div><input type="radio" id="kronansRadio" name="place" value="kronans" onclick="showLocations('kronans')"><label for="kronansRadio">Pharmacy (Kronans)</label></div>
-                <div><input type="radio" id="maxhamburgersRadio" name="place" value="maxhamburgers" onclick="showLocations('max')"><label for="maxhamburgersRadio">MAX hamburgers</label></div>
+                <div><input type="radio" id="ikeaRadio" name="place" value="ikea" onclick="addMarkers('ikea')"><label for="ikeaRadio">IKEA</label></div>
+                <div><input type="radio" id="policestationsRadio" name="place" value="policestations" onclick="addMarkers('policeStations')"><label for="policestationsRadio">Police station</label></div>
+                <div><input type="radio" id="icamaxiRadio" name="place" value="icamaxi" onclick="addMarkers('icamaxi')"><label for="icamaxiRadio">ICA Maxi</label></div>
+                <div><input type="radio" id="kronansRadio" name="place" value="kronans" onclick="addMarkers('kronans')"><label for="kronansRadio">Pharmacy (Kronans)</label></div>
+                <div><input type="radio" id="maxhamburgersRadio" name="place" value="maxhamburgers" onclick="addMarkers('max')"><label for="maxhamburgersRadio">MAX hamburgers</label></div>
             </div>
             <select class="legend-dropdown"> 
                 <option value="" selected="selected">Select</option> 
-                <option value="ikea" onclick="showLocations('ikea')">IKEA</option> 
-                <option value="policestations" onclick="showLocations('police')">Police station</option> 
-                <option value="icamaxi" onclick="showLocations('ica')">ICA Maxi</option> 
-                <option value="kronans" onclick="showLocations('kronans')">Pharmacy (Kronans)</option> 
-                <option value="maxhamburgers" onclick="showLocations('max')">MAX hamburgers</option> 
+                <option value="ikea" onclick="addMarkers('ikea')">IKEA</option> 
+                <option value="policestations" onclick="addMarkers('policeStations')">Police station</option> 
+                <option value="icamaxi" onclick="addMarkers('icamaxi')">ICA Maxi</option> 
+                <option value="kronans" onclick="addMarkers('kronans')">Pharmacy (Kronans)</option> 
+                <option value="maxhamburgers" onclick="addMarkers('max')">MAX hamburgers</option> 
               </select> 
             <div class="legend-popdensity"><span class="legend-popdensity-title">population density (inhabitant per km²)</span></div>
         </div>
     </div>
-    <script src="sv_kommuner.js"></script>
-    <script src="mapbox_overlay.js"></script>
-    <script src="map_markers.js"></script>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZGlnaHQiLCJhIjoiY2p4ZW5nanRjMG9wMzNvczhxOXprMXl4NiJ9.fmrU8kIKNnTnb6KyJ9Y1Hw'
+        let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/dight/ckj41nuc91m7j19nztxq3vzp6', 
+        });
+    </script>
+    <script>
+        var currentMarkers=[];
+        
+
+ function addMarkers(type) {
+     removeMarkers()
+	locations[type].forEach(location => {
+		var el = document.createElement('div');
+        el.className = 'marker';
+		var marker = new mapboxgl.Marker(el)
+		.setLngLat(location)
+        .addTo(map);
+        currentMarkers.push(marker)
+
+	})
+}
+function removeMarkers() {
+    if (currentMarkers!==null) {
+        for (var i = currentMarkers.length - 1; i >= 0; i--) {
+            currentMarkers[i].remove();
+        }
+    }
+}
+    </script>
+    <script src="locations.js"></script>
     <script src="legendconsole.js"></script>
-    <script src="locations/max_location_data.js"></script>
-    <script src="locations/ica_location_data.js"></script>
-    <script src="locations/police_location_data.js"></script>
-    <script src="locations/ikea_location_data.js"></script>
-    <script src="locations/kronans_location_data.js"></script>
 </body>
 </html>
 
