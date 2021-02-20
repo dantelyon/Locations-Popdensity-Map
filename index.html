@@ -47,13 +47,13 @@
      removeMarkers()
 	locations[type].forEach(location => {
 		var el = document.createElement('div');
-        el.className = 'marker';
+        el.className = 'marker black-marker';
 		var marker = new mapboxgl.Marker(el)
 		.setLngLat(location)
         .addTo(map);
-        currentMarkers.push(marker)
-
+        currentMarkers.push(marker);
 	})
+    averageMarker(type);
 }
 function removeMarkers() {
     if (currentMarkers!==null) {
@@ -61,6 +61,21 @@ function removeMarkers() {
             currentMarkers[i].remove();
         }
     }
+}
+
+function averageMarker(type) {
+    let longitudeSum = 0;
+    let latitudeSum = 0;
+    locations[type].forEach(coord => longitudeSum += coord[0]);
+    locations[type].forEach(coord => latitudeSum += coord[1]);
+    let longitudeAverage = longitudeSum / locations[type].length;
+    let latitudeAverage = latitudeSum / locations[type].length;
+    var el = document.createElement('div');
+        el.className = 'marker green-marker';
+		var marker = new mapboxgl.Marker(el)
+		.setLngLat([longitudeAverage, latitudeAverage])
+        .addTo(map);
+        currentMarkers.push(marker);
 }
     </script>
     <script src="locations.js"></script>

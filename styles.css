@@ -103,9 +103,15 @@ body {
   width: 1px;
   opacity: 0.7;
 	height: 1px;
-	box-shadow: 0 0 0px 4px black;
   border-radius: 50%;
+}
+.black-marker {
+  box-shadow: 0 0 0px 4px black;
   background-color: black;
+}
+.green-marker {
+  box-shadow: 0 0 0px 4px #02a80f;
+  background-color: #02a80f;
 }
 
 .mapboxgl-ctrl-logo{
