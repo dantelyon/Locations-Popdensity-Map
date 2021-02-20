@@ -14,6 +14,8 @@
     <div class="bottom-left">
         <div class="legend">
             <div class="legend-title">How does population density correlate with location of places?</div>
+            <div><img class="yellow-pin-desc" src="./pin-yellow.png"> = The average/mean coordinate</div>
+            <div>Count: <span id="count"></span></div>
             <div class="legend-radiobuttons">
                 <div><input type="radio" id="ikeaRadio" name="place" value="ikea" onclick="addMarkers('ikea')"><label for="ikeaRadio">IKEA</label></div>
                 <div><input type="radio" id="policestationsRadio" name="place" value="policestations" onclick="addMarkers('policeStations')"><label for="policestationsRadio">Police station</label></div>
@@ -47,12 +49,13 @@
      removeMarkers()
 	locations[type].forEach(location => {
 		var el = document.createElement('div');
-        el.className = 'marker black-marker';
+        el.className = 'black-marker';
 		var marker = new mapboxgl.Marker(el)
 		.setLngLat(location)
         .addTo(map);
         currentMarkers.push(marker);
 	})
+    document.getElementById("count").textContent = locations[type].length;
     averageMarker(type);
 }
 function removeMarkers() {
@@ -71,7 +74,7 @@ function averageMarker(type) {
     let longitudeAverage = longitudeSum / locations[type].length;
     let latitudeAverage = latitudeSum / locations[type].length;
     var el = document.createElement('div');
-        el.className = 'marker green-marker';
+        el.className = 'average-marker';
 		var marker = new mapboxgl.Marker(el)
 		.setLngLat([longitudeAverage, latitudeAverage])
         .addTo(map);

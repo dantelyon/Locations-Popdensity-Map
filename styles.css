@@ -98,22 +98,33 @@ body {
   .legend-dropdown {display: inline-block !important;}
 }
 
-.marker {
-	display: block;
-  width: 1px;
-  opacity: 0.7;
-	height: 1px;
-  border-radius: 50%;
-}
 .black-marker {
+	display: block;
+  opacity: 0.7;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
   box-shadow: 0 0 0px 4px black;
   background-color: black;
 }
-.green-marker {
-  box-shadow: 0 0 0px 4px #02a80f;
-  background-color: #02a80f;
+
+.average-marker {
+  display: block;
+  position: relative;
+  width: 11px;
+  height: 11px;
+  background: black no-repeat url("./pin-yellow.png");
+  box-shadow: 0 0 0px 2px #df0;
+  border-radius: 50%;
 }
 
 .mapboxgl-ctrl-logo{
   display: none !important;
+}
+
+.yellow-pin-desc {
+  border-radius: 50%;
+  box-shadow: 0 0 0px 2px #df0;
+  width: 11px;
+  height: 11px;
 }
