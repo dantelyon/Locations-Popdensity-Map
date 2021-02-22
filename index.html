@@ -1,88 +1,89 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Map project</title>
     <meta charset='utf-8' />
-	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
-	<script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet'/>
 	<link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="legendstyle.css" rel="stylesheet" type="text/css">
+    <link href="markerstyles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div id='map'></div>
-    <div class="bottom-left">
-        <div class="legend">
-            <div class="legend-title">How does population density correlate with location of places?</div>
-            <div><img class="yellow-pin-desc" src="./pin-yellow.png"> = The average/mean coordinate</div>
-            <div>Count: <span id="count"></span></div>
-            <div class="legend-radiobuttons">
-                <div><input type="radio" id="ikeaRadio" name="place" value="ikea" onclick="addMarkers('ikea')"><label for="ikeaRadio">IKEA</label></div>
-                <div><input type="radio" id="policestationsRadio" name="place" value="policestations" onclick="addMarkers('policeStations')"><label for="policestationsRadio">Police station</label></div>
-                <div><input type="radio" id="icamaxiRadio" name="place" value="icamaxi" onclick="addMarkers('icamaxi')"><label for="icamaxiRadio">ICA Maxi</label></div>
-                <div><input type="radio" id="kronansRadio" name="place" value="kronans" onclick="addMarkers('kronans')"><label for="kronansRadio">Pharmacy (Kronans)</label></div>
-                <div><input type="radio" id="maxhamburgersRadio" name="place" value="maxhamburgers" onclick="addMarkers('max')"><label for="maxhamburgersRadio">MAX hamburgers</label></div>
+    <main>
+        <div class="limiter">
+
+            <div id='map'></div>
+
+            <div class="legend">
+                <div class="legend-title">How does population density correlate with location of places?</div>
+                <div><img class="legend-yellow-pin" src="./pin-yellow.png"> = The average/mean coordinate</div>
+                <div>Total/count: <span id="count"></span></div>
+
+                <div class="legend-radiobuttons">
+                    <div><input type="radio" id="ikeaRadio" name="place" value="ikea" onclick="addMarkers('ikea')"><label for="ikeaRadio">IKEA</label></div>
+                    <div><input type="radio" id="policestationsRadio" name="place" value="policestations" onclick="addMarkers('policeStations')"><label for="policestationsRadio">Police station</label></div>
+                    <div><input type="radio" id="icamaxiRadio" name="place" value="icamaxi" onclick="addMarkers('icamaxi')"><label for="icamaxiRadio">ICA Maxi</label></div>
+                    <div><input type="radio" id="kronansRadio" name="place" value="kronans" onclick="addMarkers('kronans')"><label for="kronansRadio">Pharmacy (Kronans)</label></div>
+                    <div><input type="radio" id="maxhamburgersRadio" name="place" value="maxhamburgers" onclick="addMarkers('max')"><label for="maxhamburgersRadio">MAX hamburgers</label></div>
+                </div>
+
+                <select class="legend-dropdown"> 
+                    <option value="" selected="selected">Select</option> 
+                    <option value="ikea" onclick="addMarkers('ikea')">IKEA</option> 
+                    <option value="policestations" onclick="addMarkers('policeStations')">Police station</option> 
+                    <option value="icamaxi" onclick="addMarkers('icamaxi')">ICA Maxi</option> 
+                    <option value="kronans" onclick="addMarkers('kronans')">Pharmacy (Kronans)</option> 
+                    <option value="maxhamburgers" onclick="addMarkers('max')">MAX hamburgers</option> 
+                </select> 
+
+                <div class="legend-popdensity"><span class="legend-popdensity-title">population density (inhabitant per km²)</span></div>
+
+                <!--<svg class="legend2">
+                    <g class="legendCells">
+                        <g class="cell" style="opacity: 1;" transform="translate(0,0)">
+                            <rect class="swatch" height="10" width="50" style="fill: rgb(202, 0, 32);"></rect>
+                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">10%</text>
+                        </g>
+                        <g class="cell" style="opacity: 1;" transform="translate(50,0)">
+                            <rect class="swatch" height="10" width="50" style="fill: rgb(243, 160, 127);"></rect>
+                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">18%</text>
+                        </g>
+                        <g class="cell" style="opacity: 1;" transform="translate(100,0)">
+                            <rect class="swatch" height="10" width="50" style="fill: rgb(247, 242, 240);"></rect>
+                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">26%</text>
+                        </g>
+                        <g class="cell" style="opacity: 1;" transform="translate(150,0)">
+                            <rect class="swatch" height="10" width="50" style="fill: rgb(142, 194, 221);"></rect>
+                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">33%</text>
+                        </g>
+                        <g class="cell" style="opacity: 1;" transform="translate(200,0)">
+                            <rect class="swatch" height="10" width="50" style="fill: rgb(5, 113, 176);"></rect>
+                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">41%</text>
+                        </g>
+                        <g class="cell" style="opacity: 1;" transform="translate(250,0)">
+                            <rect class="swatch" height="10" width="50" style="fill: rgb(202, 0, 32);"></rect>
+                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">10%</text>
+                        </g>
+                        <g class="cell" style="opacity: 1;" transform="translate(300,0)">
+                            <rect class="swatch" height="10" width="50" style="fill: rgb(142, 194, 221);"></rect>
+                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">33%</text>
+                        </g>
+                    </g>
+                </svg>-->
             </div>
-            <select class="legend-dropdown"> 
-                <option value="" selected="selected">Select</option> 
-                <option value="ikea" onclick="addMarkers('ikea')">IKEA</option> 
-                <option value="policestations" onclick="addMarkers('policeStations')">Police station</option> 
-                <option value="icamaxi" onclick="addMarkers('icamaxi')">ICA Maxi</option> 
-                <option value="kronans" onclick="addMarkers('kronans')">Pharmacy (Kronans)</option> 
-                <option value="maxhamburgers" onclick="addMarkers('max')">MAX hamburgers</option> 
-              </select> 
-            <div class="legend-popdensity"><span class="legend-popdensity-title">population density (inhabitant per km²)</span></div>
         </div>
-    </div>
+    </main>
     <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoiZGlnaHQiLCJhIjoiY2p4ZW5nanRjMG9wMzNvczhxOXprMXl4NiJ9.fmrU8kIKNnTnb6KyJ9Y1Hw'
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZGlnaHQiLCJhIjoiY2p4ZW5nanRjMG9wMzNvczhxOXprMXl4NiJ9.fmrU8kIKNnTnb6KyJ9Y1Hw'//'pk.eyJ1IjoiZGlnaHQiLCJhIjoiY2p4ZW5nanRjMG9wMzNvczhxOXprMXl4NiJ9.fmrU8kIKNnTnb6KyJ9Y1Hw'
         let map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/dight/ckj41nuc91m7j19nztxq3vzp6', 
+        style: 'mapbox://styles/mapbox/streets-v11'//'mapbox://styles/dight/ckj41nuc91m7j19nztxq3vzp6', 
         });
     </script>
-    <script>
-        var currentMarkers=[];
-        
-
- function addMarkers(type) {
-     removeMarkers()
-	locations[type].forEach(location => {
-		var el = document.createElement('div');
-        el.className = 'black-marker';
-		var marker = new mapboxgl.Marker(el)
-		.setLngLat(location)
-        .addTo(map);
-        currentMarkers.push(marker);
-	})
-    document.getElementById("count").textContent = locations[type].length;
-    averageMarker(type);
-}
-function removeMarkers() {
-    if (currentMarkers!==null) {
-        for (var i = currentMarkers.length - 1; i >= 0; i--) {
-            currentMarkers[i].remove();
-        }
-    }
-}
-
-function averageMarker(type) {
-    let longitudeSum = 0;
-    let latitudeSum = 0;
-    locations[type].forEach(coord => longitudeSum += coord[0]);
-    locations[type].forEach(coord => latitudeSum += coord[1]);
-    let longitudeAverage = longitudeSum / locations[type].length;
-    let latitudeAverage = latitudeSum / locations[type].length;
-    var el = document.createElement('div');
-        el.className = 'average-marker';
-		var marker = new mapboxgl.Marker(el)
-		.setLngLat([longitudeAverage, latitudeAverage])
-        .addTo(map);
-        currentMarkers.push(marker);
-}
-    </script>
+    <script src="addmarkers.js"></script>
     <script src="locations.js"></script>
     <script src="legendconsole.js"></script>
 </body>
 </html>
-

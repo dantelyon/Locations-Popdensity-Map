@@ -10,6 +10,7 @@ const popdensity = [
 ]
 
 let ul = document.createElement('ul')
+ul.className = "legend-colors"
 
 popdensity.forEach(item => {
     let li = document.createElement('li');

@@ -1,0 +1,20 @@
+
+.black-marker {
+	display: block;
+  opacity: 0.7;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  box-shadow: 0 0 0px 4px black;
+  background-color: black;
+}
+
+.average-marker {
+  display: block;
+  position: relative;
+  width: 11px;
+  height: 11px;
+  background: black no-repeat url("./pin-yellow.png");
+  box-shadow: 0 0 0px 2px #df0;
+  border-radius: 50%;
+}
