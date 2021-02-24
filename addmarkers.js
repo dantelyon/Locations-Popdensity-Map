@@ -2,8 +2,9 @@
 let currentMarkers = [];
 
         function addMarkers(type) {
-            removeMarkers()
-           locations[type].forEach(location => {
+            removeMarkers();
+            const parseData = JSON.parse(data[type])
+           parseData.forEach(location => {
                var el = document.createElement('div');
                el.className = 'black-marker';
                var marker = new mapboxgl.Marker(el)
@@ -11,7 +12,7 @@ let currentMarkers = [];
                .addTo(map);
                currentMarkers.push(marker);
            })
-           document.getElementById("count").textContent = locations[type].length;
+           document.getElementById("count").textContent = parseData.length;
            averageMarker(type);
        }
        
@@ -26,10 +27,11 @@ let currentMarkers = [];
        function averageMarker(type) {
            let longitudeSum = 0;
            let latitudeSum = 0;
-           locations[type].forEach(coord => longitudeSum += coord[0]);
-           locations[type].forEach(coord => latitudeSum += coord[1]);
-           let longitudeAverage = longitudeSum / locations[type].length;
-           let latitudeAverage = latitudeSum / locations[type].length;
+           const parseData = JSON.parse(data[type])
+           parseData.forEach(coord => longitudeSum += coord[0]);
+           parseData.forEach(coord => latitudeSum += coord[1]);
+           let longitudeAverage = longitudeSum / parseData.length;
+           let latitudeAverage = latitudeSum / parseData.length;
            var el = document.createElement('div');
                el.className = 'average-marker';
                var marker = new mapboxgl.Marker(el)
