@@ -54,6 +54,18 @@
     width: 11px;
     height: 11px;
   }
+  .legend-pink-pin {
+    border-radius: 50%;
+    box-shadow: 0 0 0px 2px rgb(255, 0, 221);
+    width: 11px;
+    height: 11px;
+  }
+  .legend-blue-pin {
+    border-radius: 50%;
+    box-shadow: 0 0 0px 2px rgb(0, 26, 255);
+    width: 11px;
+    height: 11px;
+  }
   
   @media (max-width: 440px) {
     .legend {width: 100%;}

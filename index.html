@@ -13,75 +13,18 @@
 <body>
     <main>
         <div class="limiter">
-
             <div id='map'></div>
-
             <div class="legend">
                 <div class="legend-title">How does population density correlate with location of places?</div>
                 <div><img class="legend-yellow-pin" src="./pin-yellow.png"> = The average/mean coordinate of the selected location</div>
+                <div><img class="legend-pink-pin" src="./pin-yellow.png"> = The average/mean coordinate of all locations</div>
+                <div><img class="legend-blue-pin" src="./pin-yellow.png"> = center of population</div>
                 <div>Total/count: <span id="count"></span></div>
-
-                <div class="legend-radiobuttons">
-                    <div><input type="radio" id="ikeaRadio" name="place" value="ikea" onclick="addMarkers('ikea')"><label for="ikeaRadio">IKEA</label></div>
-                    <div><input type="radio" id="policestationsRadio" name="place" value="policestations" onclick="addMarkers('policeStations')"><label for="policestationsRadio">Police station</label></div>
-                    <div><input type="radio" id="icamaxiRadio" name="place" value="icamaxi" onclick="addMarkers('icamaxi')"><label for="icamaxiRadio">ICA Maxi</label></div>
-                    <div><input type="radio" id="kronansRadio" name="place" value="kronans" onclick="addMarkers('kronans')"><label for="kronansRadio">Pharmacy (Kronans)</label></div>
-                    <div><input type="radio" id="maxhamburgersRadio" name="place" value="maxhamburgers" onclick="addMarkers('max')"><label for="maxhamburgersRadio">MAX hamburgers</label></div>
-                    <div><input type="radio" id="powerplantsRadio" name="place" value="powerplants" onclick="addMarkers('powerplants')"><label for="powerplantsRadio">Power plants</label></div>
-                    <div><input type="radio" id="chargingstationsRadio" name="place" value="chargingstations" onclick="addMarkers('chargingstations')"><label for="chargingstationsRadio">Charging stations</label></div>
-                    <div><input type="radio" id="oldestcompaniesRadio" name="place" value="oldestcompanies" onclick="addMarkers('oldestcompanies')"><label for="oldestcompaniesRadio">Oldest companies (still active)</label></div>
-                    <div><input type="radio" id="districtcourtsRadio" name="place" value="districtcourts" onclick="addMarkers('districtcourts')"><label for="districtcourtsRadio">District courts</label></div>
-                    <div><input type="radio" id="prisonsRadio" name="place" value="prisons" onclick="addMarkers('prisons')"><label for="prisonsRadio">Prisons</label></div>
-                </div>
-
+                <div class="legend-radiobuttons"></div>
                 <select class="legend-dropdown"> 
                     <option value="" selected="selected">Select</option> 
-                    <option value="ikea" onclick="addMarkers('ikea')">IKEA</option> 
-                    <option value="policestations" onclick="addMarkers('policeStations')">Police station</option> 
-                    <option value="icamaxi" onclick="addMarkers('icamaxi')">ICA Maxi</option> 
-                    <option value="kronans" onclick="addMarkers('kronans')">Pharmacy (Kronans)</option> 
-                    <option value="maxhamburgers" onclick="addMarkers('max')">MAX hamburgers</option>
-                    <option value="powerplants" onclick="addMarkers('powerplants')">Power plants</option>
-                    <option value="chargingstations" onclick="addMarkers('chargingstations')">Charging stations</option>
-                    <option value="oldestcompanies" onclick="addMarkers('oldestcompanies')">Oldest companies (still active)</option>
-                    <option value="districtcourts" onclick="addMarkers('districtcourts')">District courts</option>
-                    <option value="prisons" onclick="addMarkers('prisons')">Prisons</option>
                 </select> 
-
                 <div class="legend-popdensity"><span class="legend-popdensity-title">population density (inhabitant per km²)</span></div>
-
-                <!--<svg class="legend2">
-                    <g class="legendCells">
-                        <g class="cell" style="opacity: 1;" transform="translate(0,0)">
-                            <rect class="swatch" height="10" width="50" style="fill: rgb(202, 0, 32);"></rect>
-                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">10%</text>
-                        </g>
-                        <g class="cell" style="opacity: 1;" transform="translate(50,0)">
-                            <rect class="swatch" height="10" width="50" style="fill: rgb(243, 160, 127);"></rect>
-                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">18%</text>
-                        </g>
-                        <g class="cell" style="opacity: 1;" transform="translate(100,0)">
-                            <rect class="swatch" height="10" width="50" style="fill: rgb(247, 242, 240);"></rect>
-                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">26%</text>
-                        </g>
-                        <g class="cell" style="opacity: 1;" transform="translate(150,0)">
-                            <rect class="swatch" height="10" width="50" style="fill: rgb(142, 194, 221);"></rect>
-                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">33%</text>
-                        </g>
-                        <g class="cell" style="opacity: 1;" transform="translate(200,0)">
-                            <rect class="swatch" height="10" width="50" style="fill: rgb(5, 113, 176);"></rect>
-                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">41%</text>
-                        </g>
-                        <g class="cell" style="opacity: 1;" transform="translate(250,0)">
-                            <rect class="swatch" height="10" width="50" style="fill: rgb(202, 0, 32);"></rect>
-                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">10%</text>
-                        </g>
-                        <g class="cell" style="opacity: 1;" transform="translate(300,0)">
-                            <rect class="swatch" height="10" width="50" style="fill: rgb(142, 194, 221);"></rect>
-                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">33%</text>
-                        </g>
-                    </g>
-                </svg>-->
             </div>
         </div>
     </main>
@@ -92,6 +35,7 @@
         style: 'mapbox://styles/mapbox/streets-v11'//'mapbox://styles/dight/ckj41nuc91m7j19nztxq3vzp6', 
         });
     </script>
+    <script src="createLegend.js"></script>
     <script src="addmarkers.js"></script>
     <script src="data.js"></script>
     <script src="legendconsole.js"></script>

@@ -11,10 +11,27 @@
 
 .average-marker {
   display: block;
-  position: relative;
   width: 11px;
   height: 11px;
   background: black no-repeat url("./pin-yellow.png");
   box-shadow: 0 0 0px 2px #df0;
+  border-radius: 50%;
+}
+
+.averageAll-marker {
+  display: block;
+  width: 11px;
+  height: 11px;
+  background: black no-repeat url("./pin-yellow.png");
+  box-shadow: 0 0 0px 2px rgb(255, 0, 221);
+  border-radius: 50%;
+}
+
+.centerPop-marker {
+  display: block;
+  width: 11px;
+  height: 11px;
+  background: black no-repeat url("./pin-yellow.png");
+  box-shadow: 0 0 0px 2px rgb(0, 26, 255);
   border-radius: 50%;
 }

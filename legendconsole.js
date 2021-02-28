@@ -26,3 +26,39 @@ popdensity.forEach(item => {
 })
 
 document.getElementsByClassName("legend-popdensity")[0].appendChild(ul)
+
+
+/*
+                <svg class="legend2">
+                    <g class="legendCells">
+                        <g class="cell" style="opacity: 1;" transform="translate(0,0)">
+                            <rect class="swatch" height="10" width="50" style="fill: rgb(202, 0, 32);"></rect>
+                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">10%</text>
+                        </g>
+                        <g class="cell" style="opacity: 1;" transform="translate(50,0)">
+                            <rect class="swatch" height="10" width="50" style="fill: rgb(243, 160, 127);"></rect>
+                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">18%</text>
+                        </g>
+                        <g class="cell" style="opacity: 1;" transform="translate(100,0)">
+                            <rect class="swatch" height="10" width="50" style="fill: rgb(247, 242, 240);"></rect>
+                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">26%</text>
+                        </g>
+                        <g class="cell" style="opacity: 1;" transform="translate(150,0)">
+                            <rect class="swatch" height="10" width="50" style="fill: rgb(142, 194, 221);"></rect>
+                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">33%</text>
+                        </g>
+                        <g class="cell" style="opacity: 1;" transform="translate(200,0)">
+                            <rect class="swatch" height="10" width="50" style="fill: rgb(5, 113, 176);"></rect>
+                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">41%</text>
+                        </g>
+                        <g class="cell" style="opacity: 1;" transform="translate(250,0)">
+                            <rect class="swatch" height="10" width="50" style="fill: rgb(202, 0, 32);"></rect>
+                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">10%</text>
+                        </g>
+                        <g class="cell" style="opacity: 1;" transform="translate(300,0)">
+                            <rect class="swatch" height="10" width="50" style="fill: rgb(142, 194, 221);"></rect>
+                            <text class="label" transform="translate(0,23)" style="text-anchor: start;">33%</text>
+                        </g>
+                    </g>
+                </svg>
+*/
