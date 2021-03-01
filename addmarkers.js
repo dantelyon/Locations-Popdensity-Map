@@ -16,6 +16,7 @@ function addMarkers(type) {
     createAverageMarker(type);
     centerOfPop();
     averageAllMarker();
+    document.querySelector(".location-description").textContent = "Description: " + descriptions[type];
 }
 
 function removeMarkers() {
@@ -39,7 +40,7 @@ function getAverageOfOne(type) {
 
 function createAverageMarker(type) {
     var el = document.createElement('div');
-    el.className = 'average-marker';
+    el.className = 'yellow-pin green-marker';
     var marker = new mapboxgl.Marker(el)
         .setLngLat(getAverageOfOne(type))
         .addTo(map);
@@ -59,16 +60,16 @@ function averageAllMarker() {
     let longitudeAllAverage = longitudeAllSum / dataLength;
     let latitudeAllAverage = latitudeAllSum / dataLength;
     var el = document.createElement('div');
-    el.className = 'averageAll-marker';
+    el.className = 'yellow-pin pink-marker';
     var marker = new mapboxgl.Marker(el)
-        .setLngLat([15.694669, 59.341366])
+        .setLngLat([longitudeAllAverage, latitudeAllAverage])
         .addTo(map);
     currentMarkers.push(marker);
 }
 
 function centerOfPop() {
     var el = document.createElement('div');
-    el.className = 'centerPop-marker';
+    el.className = 'yellow-pin blue-marker';
     var marker = new mapboxgl.Marker(el)
         .setLngLat([15.436389, 58.895833])
         .addTo(map);

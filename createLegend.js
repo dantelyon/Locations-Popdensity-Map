@@ -5,11 +5,11 @@ const items = [
     {name: "icamaxi", value: "ICA Maxi"},
     {name: "kronans", value: "Pharmacy (kronans)"},
     {name: "powerplants", value: "Power plants"},
-    {name: "chargingstations", value: "Charging stations"},
+    {name: "chargingstations", value: "EV charging stations"},
     {name: "oldestcompanies", value: "Oldest companies (still active)"},
     {name: "districtcourts", value: "District courts"},
     {name: "prisons", value: "Prisons"},
-    {name: "max", value: "Max hamburgers"},
+    {name: "max", value: "MAX hamburgers"},
 ]
 
 items.forEach(item => {
