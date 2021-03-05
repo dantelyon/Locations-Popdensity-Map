@@ -11,35 +11,57 @@
     <link href="markerstyles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <main>
-        <div class="limiter">
-            <div id='map'></div>
-            <div class="legend">
-                <div class="legend-title">How does population density correlate with location of places?</div>
-                <div><img class="legend-yellow-pin" src="./pin-yellow.png"> = The average/mean coordinate of the selected location</div>
-                <div><img class="legend-pink-pin" src="./pin-yellow.png"> = The average/mean coordinate of all locations</div>
-                <div><img class="legend-blue-pin" src="./pin-yellow.png"> = center of population</div>
-                <div>Total/count: <span id="count"></span></div>
-                <div class="location-description"></div>
-                <div class="legend-radiobuttons"></div>
-                <select class="legend-dropdown"> 
-                    <option value="" selected="selected">Select</option> 
-                </select> 
-                <div class="legend-popdensity"><span class="legend-popdensity-title">population density (inhabitant per km²)</span></div>
+    <div id='map'></div>
+    
+    <div class="legend">
+        <div class="legend-title">How does population density correlate with location of places?</div>
+
+        <div class="legend-location">
+            <select class="legend-dropdown"> 
+                <option value="" selected="selected">Select a place</option> 
+            </select> 
+            <div class="count hiddenOnMobile"></div>
+            <div class="location-description hiddenOnMobile"></div>
+        </div>
+
+        <div class="legend-info hiddenOnMobile">
+            <div>
+                <div><img class="blue pin" src="./pin-yellow.png">  = The average/mean coordinate of the selected location</div>
+                <div><img class="pink pin" src="./pin-yellow.png">  = The average/mean coordinate of ALL locations</div>
+                <div><img class="green pin" src="./pin-yellow.png">  = The center of population</div>
+            </div>
+            <div class="legend-popdensity">
+                <span class="legend-popdensity-title">population density (inhabitant per km²)</span>
             </div>
         </div>
-    </main>
+
+        <div href="#" onclick="showInfo()" id="show-more-info">Show <span id="moreless">more</span> info...</div>
+    </div>
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiZGlnaHQiLCJhIjoiY2p4ZW5nanRjMG9wMzNvczhxOXprMXl4NiJ9.fmrU8kIKNnTnb6KyJ9Y1Hw'//'pk.eyJ1IjoiZGlnaHQiLCJhIjoiY2p4ZW5nanRjMG9wMzNvczhxOXprMXl4NiJ9.fmrU8kIKNnTnb6KyJ9Y1Hw'
         let map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11'//'mapbox://styles/dight/ckj41nuc91m7j19nztxq3vzp6', 
+        style: 'mapbox://styles/mapbox/streets-v11',//'mapbox://styles/dight/ckj41nuc91m7j19nztxq3vzp6', 
+        center: [14.750297690342082, 58.112382521764154],
+        zoom: 5,
+        //attributionControl: false,
         });
+        //map.addControl(new mapboxgl.AttributionControl(), 'top-left');
     </script>
-    <script src="descriptions.js"></script>
-    <script src="createLegend.js"></script>
-    <script src="addmarkers.js"></script>
     <script src="data.js"></script>
-    <script src="legendconsole.js"></script>
+    <script src="descriptions.js"></script>
+    <script src="addmarkers.js"></script>
+    <script src="createPlaces.js"></script>
+    <script src="createPopDensity.js"></script>
+    <script>
+        function showInfo() {
+            const showHide = [".legend-info", ".location-description", ".count"];
+            for (let item of showHide) {
+                document.querySelector(item).classList.toggle("hiddenOnMobile")
+            }
+            var isHidden = document.querySelector(showHide[0]).classList.contains("hiddenOnMobile");
+            document.getElementById("moreless").textContent = isHidden ? "more" : "less";
+        }
+    </script>
 </body>
 </html>

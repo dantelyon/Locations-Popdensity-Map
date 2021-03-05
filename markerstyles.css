@@ -1,5 +1,5 @@
 
-.black-marker {
+.default-marker {
 	display: block;
   opacity: 0.7;
   width: 1px;
@@ -12,11 +12,14 @@
 .yellow-pin {
   background: black no-repeat url("./pin-yellow.png");
   display: block;
+}
+
+.pin {
   width: 11px;
   height: 11px;
   border-radius: 50%;
 }
 
-.green-marker {box-shadow: 0 0 0px 2px #df0;}
-.pink-marker {box-shadow: 0 0 0px 2px rgb(255, 0, 221);}
-.blue-marker {box-shadow: 0 0 0px 2px rgb(0, 26, 255);}
+.green {box-shadow: 0 0 0px 2px #df0;}
+.pink {box-shadow: 0 0 0px 2px rgb(255, 0, 221);}
+.blue {box-shadow: 0 0 0px 2px rgb(0, 26, 255);}

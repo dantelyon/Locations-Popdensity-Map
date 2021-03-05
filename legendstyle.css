@@ -1,84 +1,69 @@
 
+
 .legend {
-  pointer-events: none;
-  font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font: 14px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #fff;
+  margin: 10px;
   background: #424347;
-  width: 400px;
-  padding: 10px 15px;
-  box-sizing: inherit;
+  bottom: 50px;
+  max-width: 460px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 9999;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  box-sizing: border-box;
+  text-shadow: 1px 2px #000;
 }
 
-.legend-title {
-    font-weight: bold;
-  }
-  
-  .legend-radiobuttons, .legend-dropdown {
-    pointer-events: auto;
-  }
+.legend > div + div {margin-top: 25px;}
+.legend-title {font-weight: bold;}
+.legend-location > * {margin: 5px 0px;}
+.legend-info .pin {margin-right: 5px;}
 
-  .legend-popdensity-title {
-    font-size: 11px;
-  }
-  
-  .legend-colors {
-    padding: 0;
+
+#show-more-info {
+  display: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media (max-width: 440px) {
+  .legend {
+    width: 100%; 
+    bottom: 0;
     margin: 0;
-    list-style: none;
+    border-radius: 0;
   }
-  
-  .legend-colors li {
-    width: 13.5%;
-    float: left;
-  }
-  
-  .legend-popdensity-color {
-    width: 100%;
-    height: 10px;
-    display: inline-block;
-  }
-  
-  .legend-popdensity-inhabitants {
-    text-align: center;
-    font-size: 11px;
-    color: #989ba0;
-  }
-  
-  .legend-dropdown {
-    display: none;
-  }
-  
-  .legend-yellow-pin {
-    border-radius: 50%;
-    box-shadow: 0 0 0px 2px #df0;
-    width: 11px;
-    height: 11px;
-  }
-  .legend-pink-pin {
-    border-radius: 50%;
-    box-shadow: 0 0 0px 2px rgb(255, 0, 221);
-    width: 11px;
-    height: 11px;
-  }
-  .legend-blue-pin {
-    border-radius: 50%;
-    box-shadow: 0 0 0px 2px rgb(0, 26, 255);
-    width: 11px;
-    height: 11px;
-  }
-  
-  @media (max-width: 440px) {
-    .legend {width: 100%;}
-    .legend-radiobuttons {display: none;}
-    .legend-dropdown {display: inline-block !important;}
-  }
-  
-/*
-  .legend2 {
-    display: table;
-    margin: 0 auto;
-    font-family: "Helvetica Neue", sans-serif;
-    font-size: 12px;
-    height: 35px;
-    width: 100%;
-  }*/
+  #show-more-info {display: block; margin-top: 10px;}
+  .legend-dropdown {display: inline-block !important;}
+  .hiddenOnMobile {display: none;}
+  .legend > div + div {margin-top: 15px;}
+}
+
+
+.legend-popdensity {
+  padding-top: 10px;
+}
+.legend-popdensity-title {
+  font-size: 11px;
+}
+.legend-popdensity-colors {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.legend-popdensity-colors li {
+  width: 13.5%;
+  float: left;
+}
+.legend-popdensity-color {
+  width: 100%;
+  height: 10px;
+  display: inline-block;
+}
+.legend-popdensity-inhabitants {
+  text-align: center;
+  font-size: 11px;
+  color: #989ba0;
+}

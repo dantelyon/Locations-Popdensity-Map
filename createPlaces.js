@@ -13,22 +13,6 @@ const items = [
 ]
 
 items.forEach(item => {
-    let div = document.createElement('div');
-    let input = document.createElement('input');
-    let label = document.createElement('label');
-    input.type = "radio";
-    input.id = item.name + "Radio";
-    input.name = "place";
-    input.value = item.name;
-    input.setAttribute("onclick", `addMarkers("${item.name}")`);
-    label.for = item.name + "Radio";
-    label.textContent = item.value;
-    div.appendChild(input);
-    div.appendChild(label);
-    document.querySelector(".legend-radiobuttons").appendChild(div);
-})
-
-items.forEach(item => {
     let option = document.createElement('option');
     option.value = item.name;
     option.setAttribute("onclick", `addMarkers("${item.name}")`);
