@@ -28,4 +28,11 @@ Collecting all the data
 Creating the Mapbox visuals
 Understanding the map landscape
 Creating the legend console.
-What else?
+
+As part of this project i did many steps of the data pipeline.
+What kind of data do I want to display? Mostly a creative process.
+Is the data available? Where?
+Collect the data.
+Clean, reformat, and standardize the data.
+
+

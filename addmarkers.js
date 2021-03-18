@@ -1,20 +1,41 @@
 
-let currentMarkers = [];
+let currentMarkers = []
+let previousLayer = ""
 
-function addMarkers(type) {
+function addLayer(type) {
     removeMarkers();
     const parseData = JSON.parse(data[type])
-    parseData.forEach(location => {
-        var el = document.createElement('div');
-        el.className = 'default-marker';
-        var marker = new mapboxgl.Marker(el)
-            .setLngLat(location)
-            .addTo(map);
-        currentMarkers.push(marker);
-    })
     document.querySelector(".count").textContent = "Total/count: " + parseData.length;
     createAverageMarker(type);
     document.querySelector(".location-description").textContent = "Description: " + descriptions[type];
+    
+    if (map.getLayer(previousLayer)) {
+        map.removeLayer(previousLayer);
+    }
+
+    if (map.getSource(previousLayer)) {
+        map.removeSource(previousLayer);
+    }
+
+    previousLayer = type
+    
+    map.addLayer({
+        id: `${type}`,
+        type: 'circle',
+        source: {
+          type: 'geojson',
+          data: `./data/${type}.geojson`
+        },
+        paint: {
+          'circle-radius': [
+            'interpolate',
+            ['linear'],
+            ['number', 3.5],
+            3, 4
+          ],
+          'circle-opacity': 0.8
+        }
+      });
 }
 
 function removeMarkers() {
