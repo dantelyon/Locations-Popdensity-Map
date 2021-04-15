@@ -27,4 +27,6 @@ const descriptions = {
 
     ingridbergman: "Individuals, living in Sweden, whose first or middle name is INGRID and whose last name is BERGMAN.",
 
+    systembolaget: "add description",
+
 }
