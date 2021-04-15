@@ -16,8 +16,10 @@ const descriptions = {
 
     oldestcompanies: "Take 'active' with a grain of salt. It just means that they are still active in one way or another. Some of these companies have since being founded been absorbed by other companies and become subsidaries. Others have changed name, location, and even business operations. Is it stil the same company? You decide: https://youtu.be/LAh8HryVaeY",
 
-    districtcourts: "In Sweden, there are three types of general courts: the district courts, the courts of appeal, and the supreme court. The district court (Swedish: tingsrätt) is the first instance you'd come in contact with in a criminal case, civil law dispute, or non-contentious matters. Proceedings in this court are generally open to the public. The second, and next instance after district courts, are the courts of appeal (hovrätt), which deal with appeals against decisions of the district courts. The third and final instance, in a civil or criminal case, is the Supreme Court (Swedish: Högsta domstolen). ",
+    districtcourts: "In Sweden, there are three types of general courts: the district courts, the courts of appeal, and the supreme court. The district court (Swedish: tingsrätt) is the first instance you'd come in contact with in a criminal case, a civil law dispute, or non-contentious matters. Proceedings in this court are generally open to the public. The second, and next instance after district courts, are the courts of appeal (hovrätt), which deal with appeals against decisions of the district courts. The third and final instance, in a civil or criminal case, is the Supreme Court (Swedish: Högsta domstolen). ",
 
     prisons: "While every prison serves the same basic purpose, the prisons in Sweden have different classifications of security, from 1 to 3, where 1 is the highest classification and 3 is the lowest.",
 
+    ingridbergman: "Individuals, living in Sweden, whose first or middle name is INGRID and whose last name is BERGMAN.",
+    
 }
