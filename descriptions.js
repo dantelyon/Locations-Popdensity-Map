@@ -13,6 +13,8 @@ const descriptions = {
 
     hospitals: "<no description>",
 
+    firestations: "<no description>",
+
     powerplants: "Most energy production in Sweden comes from hydro/water power and nuclear power. The energy sources for power plants in Sweden are hydro at 142 power plants, wind: 10, biomass: 8, nuclear: 3, gas: 3, oil: 1, coal: 1.",
 
     chargingstations: "An EV charging station is a machine that supplies electric energy for the recharging of electric vehicles. The displayed data is not of all charging stations in Sweden, but just those of one of the leading EV charging operators, a company called 'Bee'.",
