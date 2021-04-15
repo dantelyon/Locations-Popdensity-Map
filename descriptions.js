@@ -8,7 +8,10 @@ const descriptions = {
     kronans: "Kronans Apotek is a Swedish pharmacy company, and the third largest pharmacy chain in the country. It was founded in 1907 with history going back to the early 18th century.",
 
     max: "Max Burgers AB is the oldest hamburger resturaunt chain in Sweden. Before the 1990s, most of their locations and popularity was in northern Sweden. Today though, MAX is a nationwide fast-food chain, and so is therir popupality, with For nine consecutive years, Max has had the most satisfied customers among the nationwide fast food chains in Sweden, beating McDonald's and Burger King by large margins.",
+
     policeStations: "<no description>",
+
+    hospitals: "<no description>",
 
     powerplants: "Most energy production in Sweden comes from hydro/water power and nuclear power. The energy sources for power plants in Sweden are hydro at 142 power plants, wind: 10, biomass: 8, nuclear: 3, gas: 3, oil: 1, coal: 1.",
 
@@ -21,5 +24,5 @@ const descriptions = {
     prisons: "While every prison serves the same basic purpose, the prisons in Sweden have different classifications of security, from 1 to 3, where 1 is the highest classification and 3 is the lowest.",
 
     ingridbergman: "Individuals, living in Sweden, whose first or middle name is INGRID and whose last name is BERGMAN.",
-    
+
 }

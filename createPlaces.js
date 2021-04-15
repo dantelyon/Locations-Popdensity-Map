@@ -11,6 +11,7 @@ const items = [
     {name: "prisons", value: "Prisons"},
     {name: "max", value: "MAX hamburgers"},
     {name: "ingridbergman", value: "Ingrid Bergman"},
+    {name: "hospitals", value: "Hospitals"},
 ]
 
 items.forEach(item => {
