@@ -27,6 +27,7 @@ const descriptions = {
 
     ingridbergman: "Individuals, living in Sweden, whose first or middle name is INGRID and whose last name is BERGMAN.",
 
-    systembolaget: "add description",
+    systembolaget: "Systembolaget is a government-owned chain of liquor stores in Sweden. It is the only retail store allowed to sell alcoholic beverages that contain more than 3.5% alcohol by volume. ",
 
+    trialsubjects: "Individuals who have been the subject of criminal trials during the last five years. Shown on the map are only those whose last name is SVENSSON and whose first or middle name is SVEN. For privacy reasons, I chose to have the coordinates represent locality and not their exact address.",
 }
