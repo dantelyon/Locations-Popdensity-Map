@@ -5,9 +5,9 @@ let previousLayer = ""
 function addLayer(type) {
     removeMarkers();
     const parseData = JSON.parse(data[type])
-    document.querySelector(".count").textContent = "Total/count: " + parseData.length;
+    document.querySelector(".count span:nth-child(2)").textContent = parseData.length;
     createAverageMarker(type);
-    document.querySelector(".location-description").textContent = "Description: " + descriptions[type];
+    document.querySelector(".location-description span:nth-child(2)").textContent = descriptions[type];
     
     if (map.getLayer(previousLayer)) {
         map.removeLayer(previousLayer);
