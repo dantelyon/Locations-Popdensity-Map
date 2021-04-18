@@ -2,7 +2,8 @@
 let currentMarkers = []
 let previousLayer = ""
 
-function addLayer(type) {
+function addLayer() {
+    const type = document.querySelector(".legend-dropdown").value
     removeMarkers();
     const parseData = JSON.parse(data[type])
     document.querySelector(".count span:nth-child(2)").textContent = parseData.length;

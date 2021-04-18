@@ -20,7 +20,6 @@ const items = [
 items.forEach(item => {
     let option = document.createElement('option');
     option.value = item.name;
-    option.setAttribute("onclick", `addLayer("${item.name}")`);
     option.textContent = item.value;
     document.querySelector(".legend-dropdown").appendChild(option);
 })
