@@ -1,12 +1,126 @@
 
+
+/************** GENERAL ******************/
 body {
   margin: 0;
   padding: 0;
 }
-
 #map {
   top: 0;
   bottom: 0;
   width: 100%;
   position: absolute;
+}
+
+
+/***************** MARKERS & PINS *****************/
+.default-marker {
+	display: block;
+  opacity: 0.7;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  box-shadow: 0 0 0px 4px black;
+  background-color: black;
+}
+.yellow-pin {
+  background: black no-repeat url("./pin-yellow.png");
+  display: block;
+}
+.pin {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.green {box-shadow: 0 0 0px 2px #df0;}
+.pink {box-shadow: 0 0 0px 2px rgb(255, 0, 221);}
+.blue {box-shadow: 0 0 0px 2px rgb(0, 26, 255);}
+
+
+/***************** MAP LEGEND **************/
+.legend {
+  font: 16px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #ddd;
+  left: 10px;
+  background-color: #17171d;
+  bottom: 40px;
+  max-width: 460px;
+  border-radius: 4px;
+  position: fixed;
+  z-index: 10;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  box-sizing: border-box;
+  opacity: 0.9;
+}
+
+.legend-info {
+  border-top: 1px solid #676060;
+}
+.location-description span:nth-child(1), .count span:nth-child(1) {
+  color: #8d8d8d;
+}
+.legend-info, .legend-location {
+  padding-top: 10px;
+}
+.legend-title, .legend-location {
+  padding-bottom: 10px;
+}
+
+.legend-title {font-weight: bold;}
+.legend-location > * {margin: 5px 0px;}
+.legend-info .pin {margin-right: 5px;}
+
+.legend-dropdown {
+  padding: 5px;
+  border: 0px;
+  background-color: #454545;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#show-more-info {
+  display: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media (max-width: 440px) {
+  .legend {
+    width: 100%; 
+    bottom: 0;
+    margin: 0;
+    left: 0;
+    border-radius: 0;
+  }
+  #show-more-info {display: block; margin-top: 10px;}
+  .legend-dropdown {display: inline-block !important;}
+  .hiddenOnMobile {display: none;}
+}
+
+.legend-popdensity {
+  padding-top: 10px;
+}
+.legend-popdensity-title {
+  font-size: 11px;
+}
+.legend-popdensity-colors {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.legend-popdensity-colors li {
+  width: 14%;
+  float: left;
+}
+.legend-popdensity-color {
+  width: 100%;
+  height: 10px;
+  display: inline-block;
+}
+.legend-popdensity-inhabitants {
+  text-align: center;
+  font-size: 11px;
+  color: #989ba0;
 }
