@@ -5,7 +5,7 @@ import COORDS_DATA from "./coordsData.js";
 import {createAverageMarker} from "./createMarkers.js";
 import {map} from "./createMap.js";
 
-export default function createLayer() {
+export default function updateLayer() {
     const type = document.querySelector(".legend-dropdown").value
     const parseData = JSON.parse(COORDS_DATA[type])
     document.querySelector(".count span:nth-child(2)").textContent = parseData.length;

@@ -1,25 +1,25 @@
 
-const popdensity = [
-    {color: '#feedde', text: "< 10"},
-    {color: '#fdd0a2', text: "10"},
-    {color: '#fdae6b', text: "20"},
-    {color: '#fd8d3c', text: "50"},
-    {color: '#f16913', text: "100"},
-    {color: '#d94801', text: "200"},
-    {color: '#8c2d04', text: "> 1000"}
+const CELLS = [
+    {color: '#feedde', popdensity: "< 10"},
+    {color: '#fdd0a2', popdensity: "10"},
+    {color: '#fdae6b', popdensity: "20"},
+    {color: '#fd8d3c', popdensity: "50"},
+    {color: '#f16913', popdensity: "100"},
+    {color: '#d94801', popdensity: "200"},
+    {color: '#8c2d04', popdensity: "> 1000"}
 ]
 
 export default function createLegendCells() {
     let ul = document.createElement('ul')
     ul.className = "legend-popdensity-colors"
-    popdensity.forEach(item => {
+    CELLS.forEach(item => {
         let li = document.createElement('li');
         let color = document.createElement('div');
         let text = document.createElement('div');
         color.className = "legend-popdensity-color";
         color.style.background = item.color;
         text.className = "legend-popdensity-inhabitants";
-        text.innerHTML = item.text;
+        text.innerHTML = item.popdensity;
         li.appendChild(color);
         li.appendChild(text);
         ul.appendChild(li);
