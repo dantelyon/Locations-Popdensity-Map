@@ -1,10 +1,8 @@
 
-import averageCoords  from "./createMarkers.js";
-import createLegendOptions from "./createPlaces.js";
 import createLegendCells from "./createPopDensity.js";
-import flyTo from "./flyTo.js";
 import showLegendInfo from "./showLegendInfo.js";
 import updateLayer from "./updateLayer.js";
+import METADATA from "./METADATA.js";
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZGlnaHQiLCJhIjoiY2p4ZW5nanRjMG9wMzNvczhxOXprMXl4NiJ9.fmrU8kIKNnTnb6KyJ9Y1Hw'//'pk.eyJ1IjoiZGlnaHQiLCJhIjoiY2p4ZW5nanRjMG9wMzNvczhxOXprMXl4NiJ9.fmrU8kIKNnTnb6KyJ9Y1Hw'
 
@@ -21,21 +19,41 @@ export const map = new mapboxgl.Map({
 
 document.querySelector(".legend-dropdown").addEventListener('change', updateLayer)
 document.getElementById("show-more-info").addEventListener('click', showLegendInfo)
-createLegendOptions()
 createLegendCells()
 
+for (let place in METADATA) {
+    let option = document.createElement('option');
+    option.value = METADATA[place].value;
+    option.textContent = METADATA[place].name;
+    document.querySelector(".legend-dropdown").appendChild(option);
+}
+
+
 //create pin for average coordinate of ALL places
+const averageALL = [15.636830766913004, 59.26063787090151]
 let div = document.createElement('div');
         div.className = 'pink pin yellow-pin';
         let marker = new mapboxgl.Marker(div)
-            .setLngLat(averageCoords.average_of_ALL)
+            .setLngLat(averageALL)
             .addTo(map);
 
 //map.addControl(new mapboxgl.AttributionControl(), 'top-left');
 map.addControl(new mapboxgl.NavigationControl());
 map.on('load', function() {
     centerOfPop();
-    flyTo(map);
+    map.flyTo({
+        // These options control the ending camera position: centered at the target, at zoom level 9, and north up.
+        center: [14.750297690342082, 58.112382521764154],
+        zoom: 5,
+        bearing: 0,
+        // These options control the flight curve, making it move slowly and zoom out almost completely before starting to pan.
+        speed: 0.2, // make the flying slow
+        curve: 1, // change the speed at which it zooms out
+        // This can be any easing function: it takes a number between 0 and 1 and returns another number between 0 and 1.
+        easing: function (t) {return t;},
+        // this animation is considered essential with respect to prefers-reduced-motion
+        essential: true
+    });
 })
 
 function centerOfPop() {

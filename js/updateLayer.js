@@ -1,16 +1,13 @@
 
-let previousLayer = ""
-import PLACE_DESCRIPTIONS from "./placeDescriptions.js";
-import COORDS_DATA from "./coordsData.js";
-import averageCoords from "./createMarkers.js";
+let previousLayer = "";
 import { map } from "./createMap.js";
+import METADATA from "./METADATA.js";
 
 let currentMarker = null;
 
 export default function updateLayer() {
     const type = document.querySelector(".legend-dropdown").value
-    const parseData = JSON.parse(COORDS_DATA[type])
-    document.querySelector(".count span:nth-child(2)").textContent = parseData.length;
+    document.querySelector(".count span:nth-child(2)").textContent = METADATA[type].count;
 
     if (currentMarker) {
       currentMarker.remove();
@@ -19,12 +16,12 @@ export default function updateLayer() {
   let div = document.createElement('div');
   div.className = 'blue pin yellow-pin';
   let marker = new mapboxgl.Marker(div)
-      .setLngLat(averageCoords[type])
+      .setLngLat(METADATA[type].averageCoord)
       .addTo(map);
   currentMarker = marker;
     
     
-    document.querySelector(".location-description span:nth-child(2)").textContent = PLACE_DESCRIPTIONS[type];
+    document.querySelector(".location-description span:nth-child(2)").textContent = METADATA[type].description;
     
     if (map.getLayer(previousLayer)) {
         map.removeLayer(previousLayer);
