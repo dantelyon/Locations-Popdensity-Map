@@ -1,6 +1,6 @@
 
 let previousLayer = "";
-import { map } from "./createMap.js";
+import map from "./createMap.js";
 import METADATA from "./METADATA.js";
 
 let currentMarker = null;

@@ -1,4 +1,6 @@
 
+import METADATA from "./METADATA.js";
+
 const CELLS = [
     {color: '#feedde', popdensity: "< 10"},
     {color: '#fdd0a2', popdensity: "10"},
@@ -9,7 +11,7 @@ const CELLS = [
     {color: '#8c2d04', popdensity: "> 1000"}
 ]
 
-export default function createLegendCells() {
+function createLegendCells() {
     let ul = document.createElement('ul')
     ul.className = "legend-popdensity-colors"
     CELLS.forEach(item => {
@@ -25,4 +27,24 @@ export default function createLegendCells() {
         ul.appendChild(li);
     })
     document.getElementsByClassName("legend-popdensity")[0].appendChild(ul)
+}
+
+document.getElementById("show-more-info").addEventListener('click', showLegendInfo)
+
+createLegendCells()
+
+for (let place in METADATA) {
+    let option = document.createElement('option');
+    option.value = METADATA[place].value;
+    option.textContent = METADATA[place].name;
+    document.querySelector(".legend-dropdown").appendChild(option);
+}
+
+function showLegendInfo() {
+    const showHide = [".legend-info", ".location-description", ".count"];
+    for (let item of showHide) {
+        document.querySelector(item).classList.toggle("hiddenOnMobile")
+    }
+    const isHidden = document.querySelector(".legend-info").classList.contains("hiddenOnMobile");
+    document.getElementById("moreless").textContent = isHidden ? "more" : "less";
 }
