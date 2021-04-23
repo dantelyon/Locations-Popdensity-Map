@@ -1,6 +1,6 @@
 
 
-const DESCRIPTIONS = {
+const PLACE_DESCRIPTIONS = {
     policestations: "<no description needed>",
     hospitals: "<no description needed>",
     firestations: "<no description needed>",
@@ -30,4 +30,4 @@ const DESCRIPTIONS = {
     trialsubjects: "Individuals who have been the subject of criminal trials during the last five years. Shown on the map are only those whose last name is SVENSSON and whose first or middle name is SVEN. For privacy reasons, I chose to have the coordinates represent locality and not their exact address.",
 }
 
-export default DESCRIPTIONS
+export default PLACE_DESCRIPTIONS

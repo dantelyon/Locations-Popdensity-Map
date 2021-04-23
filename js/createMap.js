@@ -1,9 +1,9 @@
 
-import {averageAllMarker, centerOfPop} from "./createMarkers.js";
+import averageCoords  from "./createMarkers.js";
 import createLegendOptions from "./createPlaces.js";
 import createLegendCells from "./createPopDensity.js";
 import flyTo from "./flyTo.js";
-import showInfo from "./showInfo.js";
+import showLegendInfo from "./showLegendInfo.js";
 import updateLayer from "./updateLayer.js";
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZGlnaHQiLCJhIjoiY2p4ZW5nanRjMG9wMzNvczhxOXprMXl4NiJ9.fmrU8kIKNnTnb6KyJ9Y1Hw'//'pk.eyJ1IjoiZGlnaHQiLCJhIjoiY2p4ZW5nanRjMG9wMzNvczhxOXprMXl4NiJ9.fmrU8kIKNnTnb6KyJ9Y1Hw'
@@ -20,16 +20,31 @@ export const map = new mapboxgl.Map({
 });
 
 document.querySelector(".legend-dropdown").addEventListener('change', updateLayer)
-document.getElementById("show-more-info").addEventListener('click', showInfo)
+document.getElementById("show-more-info").addEventListener('click', showLegendInfo)
 createLegendOptions()
 createLegendCells()
-averageAllMarker()
+
+//create pin for average coordinate of ALL places
+let div = document.createElement('div');
+        div.className = 'pink pin yellow-pin';
+        let marker = new mapboxgl.Marker(div)
+            .setLngLat(averageCoords.average_of_ALL)
+            .addTo(map);
+
 //map.addControl(new mapboxgl.AttributionControl(), 'top-left');
 map.addControl(new mapboxgl.NavigationControl());
 map.on('load', function() {
     centerOfPop();
     flyTo(map);
 })
+
+function centerOfPop() {
+    let div = document.createElement('div');
+    div.className = 'green pin yellow-pin';
+    let marker = new mapboxgl.Marker(div)
+        .setLngLat([15.436389, 58.895833])
+        .addTo(map);
+}
 
 
 

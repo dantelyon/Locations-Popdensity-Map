@@ -1,16 +1,30 @@
 
 let previousLayer = ""
-import DESCRIPTIONS from "./descriptions.js";
+import PLACE_DESCRIPTIONS from "./placeDescriptions.js";
 import COORDS_DATA from "./coordsData.js";
-import {createAverageMarker} from "./createMarkers.js";
-import {map} from "./createMap.js";
+import averageCoords from "./createMarkers.js";
+import { map } from "./createMap.js";
+
+let currentMarker = null;
 
 export default function updateLayer() {
     const type = document.querySelector(".legend-dropdown").value
     const parseData = JSON.parse(COORDS_DATA[type])
     document.querySelector(".count span:nth-child(2)").textContent = parseData.length;
-    createAverageMarker(type);
-    document.querySelector(".location-description span:nth-child(2)").textContent = DESCRIPTIONS[type];
+
+    if (currentMarker) {
+      currentMarker.remove();
+      currentMarker = null;
+  }
+  let div = document.createElement('div');
+  div.className = 'blue pin yellow-pin';
+  let marker = new mapboxgl.Marker(div)
+      .setLngLat(averageCoords[type])
+      .addTo(map);
+  currentMarker = marker;
+    
+    
+    document.querySelector(".location-description span:nth-child(2)").textContent = PLACE_DESCRIPTIONS[type];
     
     if (map.getLayer(previousLayer)) {
         map.removeLayer(previousLayer);

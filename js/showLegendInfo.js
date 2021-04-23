@@ -1,5 +1,5 @@
 
-export default function showInfo() {
+export default function showLegendInfo() {
     const showHide = [".legend-info", ".location-description", ".count"];
     for (let item of showHide) {
         document.querySelector(item).classList.toggle("hiddenOnMobile")
