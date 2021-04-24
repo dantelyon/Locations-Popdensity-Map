@@ -12,8 +12,8 @@ const CELLS = [
 ]
 
 function createLegendCells() {
-    let ul = document.createElement('ul')
-    ul.className = "legend-popdensity-colors"
+    let ul = document.createElement('ul');
+    ul.className = "legend-popdensity-colors";
     CELLS.forEach(item => {
         let li = document.createElement('li');
         let color = document.createElement('div');
@@ -21,16 +21,13 @@ function createLegendCells() {
         color.className = "legend-popdensity-color";
         color.style.background = item.color;
         text.className = "legend-popdensity-inhabitants";
-        text.innerHTML = item.popdensity;
+        text.textContent = item.popdensity;
         li.appendChild(color);
         li.appendChild(text);
         ul.appendChild(li);
     })
     document.getElementsByClassName("legend-popdensity")[0].appendChild(ul)
 }
-
-document.getElementById("show-more-info").addEventListener('click', showLegendInfo)
-
 createLegendCells()
 
 for (let place in METADATA) {
@@ -40,10 +37,11 @@ for (let place in METADATA) {
     document.querySelector(".legend-dropdown").appendChild(option);
 }
 
+document.getElementById("show-more-info").addEventListener('click', showLegendInfo)
 function showLegendInfo() {
     const showHide = [".legend-info", ".location-description", ".count"];
     for (let item of showHide) {
-        document.querySelector(item).classList.toggle("hiddenOnMobile")
+        document.querySelector(item).classList.toggle("hiddenOnMobile");
     }
     const isHidden = document.querySelector(".legend-info").classList.contains("hiddenOnMobile");
     document.getElementById("moreless").textContent = isHidden ? "more" : "less";

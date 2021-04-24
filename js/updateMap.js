@@ -1,53 +1,44 @@
 
-let previousLayer = "";
 import map from "./createMap.js";
 import METADATA from "./METADATA.js";
-
-let currentMarker = null;
+let previousLayer = "";
+let previousPin = null;
 
 export default function updateLayer() {
-    const type = document.querySelector(".legend-dropdown").value
-    document.querySelector(".count span:nth-child(2)").textContent = METADATA[type].count;
+  const selectedPlace = document.querySelector(".legend-dropdown").value;
 
-    if (currentMarker) {
-      currentMarker.remove();
-      currentMarker = null;
+  document.querySelector(".count span:nth-child(2)").textContent = METADATA[selectedPlace].count;
+  document.querySelector(".location-description span:nth-child(2)").textContent = METADATA[selectedPlace].description;
+
+  const averageCoordPin = document.createElement('div');
+  averageCoordPin.className = 'blue pin yellow-pin';
+  const pin = new mapboxgl.Marker(averageCoordPin).setLngLat(METADATA[selectedPlace].averageCoord).addTo(map);
+  
+  if (previousPin) {
+    previousPin.remove();
+    previousPin = null;
   }
-  let div = document.createElement('div');
-  div.className = 'blue pin yellow-pin';
-  let marker = new mapboxgl.Marker(div)
-      .setLngLat(METADATA[type].averageCoord)
-      .addTo(map);
-  currentMarker = marker;
-    
-    
-    document.querySelector(".location-description span:nth-child(2)").textContent = METADATA[type].description;
-    
-    if (map.getLayer(previousLayer)) {
-        map.removeLayer(previousLayer);
+  previousPin = pin;
+  
+  if (map.getLayer(previousLayer)) map.removeLayer(previousLayer);
+  if (map.getSource(previousLayer)) map.removeSource(previousLayer);
+  previousLayer = selectedPlace;
+  
+  map.addLayer({
+    id: `${selectedPlace}`,
+    type: 'circle',
+    source: {
+      type: 'geojson',
+      data: `./data/${selectedPlace}.geojson`
+    },
+    paint: {
+      'circle-radius': [
+        'interpolate',
+        ['linear'],
+        ['number', 3.5],
+        3, 4
+      ],
+      'circle-opacity': 0.8
     }
-
-    if (map.getSource(previousLayer)) {
-        map.removeSource(previousLayer);
-    }
-
-    previousLayer = type
-    
-    map.addLayer({
-        id: `${type}`,
-        type: 'circle',
-        source: {
-          type: 'geojson',
-          data: `./data/${type}.geojson`
-        },
-        paint: {
-          'circle-radius': [
-            'interpolate',
-            ['linear'],
-            ['number', 3.5],
-            3, 4
-          ],
-          'circle-opacity': 0.8
-        }
-      });
+  });
 }

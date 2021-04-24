@@ -12,24 +12,23 @@ const map = new mapboxgl.Map({
     zoom: 2,
     //attributionControl: false,
     //maxBounds: [[-5.994038888237595, 50.168382388177804], [38.07293243872676, 71.8192427469669]]
-});
-export default map
+}); export default map
 
 document.querySelector(".legend-dropdown").addEventListener('change', updateMap)
-
-
-//create pin for average coordinate of ALL places
-const averageALL = [15.636830766913004, 59.26063787090151]
-let div = document.createElement('div');
-        div.className = 'pink pin yellow-pin';
-        let marker = new mapboxgl.Marker(div)
-            .setLngLat(averageALL)
-            .addTo(map);
-
 //map.addControl(new mapboxgl.AttributionControl(), 'top-left');
 map.addControl(new mapboxgl.NavigationControl());
+
 map.on('load', function() {
-    centerOfPop();
+    const average_ALL_coord = [15.636830766913004, 59.26063787090151];
+    let average_ALL_pin = document.createElement('div');
+    average_ALL_pin.className = 'pink pin yellow-pin';
+    new mapboxgl.Marker(average_ALL_pin).setLngLat(average_ALL_coord).addTo(map);
+
+    const center_of_pop = [15.436389, 58.895833];
+    let centerPop_pin = document.createElement('div');
+    centerPop_pin.className = 'green pin yellow-pin';
+    new mapboxgl.Marker(centerPop_pin).setLngLat(center_of_pop).addTo(map);
+
     map.flyTo({
         // These options control the ending camera position: centered at the target, at zoom level 9, and north up.
         center: [14.750297690342082, 58.112382521764154],
@@ -44,12 +43,3 @@ map.on('load', function() {
         essential: true
     });
 })
-
-function centerOfPop() {
-    let div = document.createElement('div');
-    div.className = 'green pin yellow-pin';
-    let marker = new mapboxgl.Marker(div)
-        .setLngLat([15.436389, 58.895833])
-        .addTo(map);
-}
-
