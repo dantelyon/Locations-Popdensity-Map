@@ -7,7 +7,7 @@ const METADATA = {
         name: "ICA Maxi",
         count: 87,
         averageCoord: [15.39884632183908,58.598537586206895],
-        description: "ICA is the leading grocery retailer in Sweden, with around 1,300 stores and a market share of around 36%. Shown on the map are NOT all of these 1300 ICA stores, but rather the largest type of store, the 'ICA Maxi Stormarknad'. These are hypermarkets with a wide range of groceries, as well as non-food items such as housewares, entertainment and garden supplies.",
+        description: "ICA is the leading grocery retailer in Sweden, with around 1300 stores and a market share of around 36%. Shown on the map are NOT all of these 1300 ICA stores, but rather their largest type of store, the 'ICA Maxi Stormarknad'. These are hypermarkets with a wide range of groceries, as well as non-food items such as housewares, entertainment, and garden supplies.",
     },
 
     // from: https://www.ikea.com/se/sv/stores/
@@ -26,7 +26,7 @@ const METADATA = {
         name: "Oldest companies (still active)",
         count: 40,
         averageCoord: [15.297745408707323,58.54811563967479],
-        description: "Take 'active' with a grain of salt. It just means that they are still active in one way or another. Some of these companies have since being founded been absorbed by other companies and become subsidaries. Others have changed name, location, and even business operations. Is it stil the same company? You decide: https://youtu.be/LAh8HryVaeY",
+        description: "Take 'active' with a grain of salt. It just means that they are still active in one way or another. Some of these companies have since being founded been absorbed by other companies and become subsidiaries. Others have changed name, location, and even business operations. Is it still the same company? You decide: https://youtu.be/LAh8HryVaeY",
     },
 
     // from: https://www.domstol.se/hitta-domstol/allmanna-domstolar/tingsratter/
@@ -35,7 +35,7 @@ const METADATA = {
         name: "District courts",
         count: 48,
         averageCoord: [16.067704114652773,59.43269646787718],
-        description: "In Sweden, there are three types of general courts: the district courts, the courts of appeal, and the supreme court. The district court (Swedish: tingsrätt) is the first instance you'd come in contact with in a criminal case, a civil law dispute, or non-contentious matters. Proceedings in this court are generally open to the public. The second, and next instance after district courts, are the courts of appeal (hovrätt), which deal with appeals against decisions of the district courts. The third and final instance, in a civil or criminal case, is the Supreme Court (Swedish: Högsta domstolen).",
+        description: "In Sweden, there are three types of general courts: the district courts, the courts of appeal, and the supreme court. The district court (Swedish: tingsrätt) is the first instance you'd come in contact with in a criminal case, a civil law dispute, or non-contentious matters. Proceedings in this court are generally open to the public. The second, and next instance after district courts, are the courts of appeal (Swedish: hovrätt), which deal with appeals against decisions of the district courts. The third and final instance, in a civil or criminal case, is the Supreme Court (Swedish: Högsta domstolen).",
     },
 
     // from: https://www.kriminalvarden.se/fangelse-frivard-och-hakte/fangelse/vara-anstalter/
@@ -51,10 +51,10 @@ const METADATA = {
 	// how: search for "sverige" -> find the json query -> add "&page=1" as a parameter to the query -> copy the json objects of all the pages -> filter for coordinates
     kronans: {
         value: "kronans",
-        name: "Pharmacy (kronans)",
+        name: "Pharmacy (Kronans)",
         count: 314,
         averageCoord: [15.466329582802544,59.12684053503183],
-        description: "Kronans Apotek is a Swedish pharmacy company, and the third largest pharmacy chain in the country. It was founded in 1907 with history going back to the early 18th century.",
+        description: "'Kronans Apotek' is a Swedish pharmacy company, and the third largest pharmacy chain in the country. It was founded in 1907 with history going back to the early 18th century.",
     },
 
     // from: https://www.max.se/hitta-max/restauranger/
@@ -64,7 +64,7 @@ const METADATA = {
         name: "MAX hamburgers",
         count: 134,
         averageCoord: [15.899692751492545,59.223979081343295],
-        description: "Max Burgers AB is the oldest hamburger resturaunt chain in Sweden. Before the 1990s, most of their locations and popularity was in northern Sweden. Today though, MAX is a nationwide fast-food chain, and so is therir popupality, with For nine consecutive years, Max has had the most satisfied customers among the nationwide fast food chains in Sweden, beating McDonald's and Burger King by large margins.",
+        description: "MAX Burgers AB is the oldest hamburger restaurant chain in Sweden. Before the 1990s, most of their locations and popularity was in northern Sweden. Today though, MAX is a nationwide fast-food chain, and so is their popularity, with For nine consecutive years, Max has had the most satisfied customers among the nationwide fast food chains in Sweden, beating McDonald's and Burger King by large margins.",
     },
 
     // from: https://polisen.se/api/policestations
@@ -94,7 +94,7 @@ const METADATA = {
         name: "EV charging stations",
         count: 446,
         averageCoord: [15.343572544843065,59.03586594618839],
-        description: "An EV charging station is a machine that supplies electric energy for the recharging of electric vehicles. The displayed data is not of all charging stations in Sweden, but just those of one of the leading EV charging operators, a company called 'Bee'.",
+        description: "An EV charging station is a machine that supplies electric energy for the recharging of electric vehicles. The displayed data is not of all charging stations in the Sweden, but just those of one of the leading EV charging operators, a company called 'Bee'.",
     },
 
     // from: hitta.se
@@ -145,7 +145,7 @@ const METADATA = {
         name: "Subjects of criminal trial",
         count: 96,
         averageCoord: [14.90825185453094,58.29532085264662],
-        description: "Individuals who have been the subject of criminal trials during the last five years. Shown on the map are only those whose last name is SVENSSON and whose first or middle name is SVEN. For privacy reasons, I chose to have the coordinates represent locality and not their exact address.",
+        description: "Individuals who have been the subject of criminal trials during the last five years. Shown on the map are only those whose last name is SVENSSON and whose first or middle name is SVEN. For privacy reasons, I chose to have the coordinates represent locality and not exact address.",
     },
 }
 
