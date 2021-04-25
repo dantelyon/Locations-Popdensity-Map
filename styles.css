@@ -39,11 +39,11 @@ body {
 
 /***************** MAP LEGEND **************/
 .legend {
-  font: 16px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font: 1rem/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #ddd;
-  left: 10px;
-  background-color: #17171d;
+  left: 0.6em;
   bottom: 40px;
+  background-color: #17171d;
   max-width: 460px;
   border-radius: 4px;
   position: fixed;
@@ -83,25 +83,6 @@ body {
   cursor: pointer;
 }
 
-#show-more-info {
-  display: none;
-  text-align: center;
-  cursor: pointer;
-}
-
-@media (max-width: 440px) {
-  .legend {
-    width: 100%; 
-    bottom: 0;
-    margin: 0;
-    left: 0;
-    border-radius: 0;
-  }
-  #show-more-info {display: block; margin-top: 10px;}
-  .legend-dropdown {display: inline-block !important;}
-  .hiddenOnMobile {display: none;}
-}
-
 .legend-popdensity {
   padding-top: 10px;
 }
@@ -126,4 +107,26 @@ body {
   text-align: center;
   font-size: 11px;
   color: #989ba0;
+}
+
+#show-more-info {
+  display: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  #show-more-info {display: block; margin-top: 10px;}
+  .legend-dropdown {display: inline-block !important;}
+  .hiddenOnMobile {display: none;}
+}
+
+@media (max-width: 440px) {
+  .legend {
+    width: 100%; 
+    bottom: 0;
+    margin: 0;
+    left: 0;
+    border-radius: 0;
+  }
 }
