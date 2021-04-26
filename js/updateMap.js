@@ -8,7 +8,7 @@ export default function updateLayer() {
   const selectedPlace = document.querySelector(".legend-dropdown").value;
 
   document.querySelector(".count span:nth-child(2)").textContent = METADATA[selectedPlace].count;
-  document.querySelector(".location-description span:nth-child(2)").textContent = METADATA[selectedPlace].description;
+  document.querySelector(".location-description span:nth-child(2)").innerHTML = METADATA[selectedPlace].description;
 
   const averageCoordPin = document.createElement('div');
   averageCoordPin.className = 'blue pin yellow-pin';

@@ -54,6 +54,10 @@ body {
   opacity: 0.9;
 }
 
+.legend a {
+  color: #67b0ef;
+}
+
 .legend-info {
   border-top: 1px solid #676060;
 }

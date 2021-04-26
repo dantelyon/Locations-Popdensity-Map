@@ -26,9 +26,9 @@ const METADATA = {
         name: "Oldest companies (still active)",
         count: 40,
         averageCoord: [15.297745408707323,58.54811563967479],
-        description: "Take 'active' with a grain of salt. It just means that they are still active in one way or another. Some of these companies have since being founded been absorbed by other companies and become subsidiaries. Others have changed name, location, and even business operations. Is it still the same company? You decide: https://youtu.be/LAh8HryVaeY",
+        description: "Take 'active' with a grain of salt. It just means that they are still active in one way or another. Some of these companies have since being founded been absorbed by other companies and become subsidiaries. Others have changed name, location, and even business operations. Whether that still makes them the same company is for the <a href='https://youtu.be/LAh8HryVaeY' target='_blank'>philosophers</a> to decide.",
     },
-
+    
     // from: https://www.domstol.se/hitta-domstol/allmanna-domstolar/tingsratter/
     districtcourts: {
         value: "districtcourts",
@@ -36,15 +36,6 @@ const METADATA = {
         count: 48,
         averageCoord: [16.067704114652773,59.43269646787718],
         description: "In Sweden, there are three types of general courts: the district courts, the courts of appeal, and the supreme court. The district court (Swedish: tingsrätt) is the first instance you'd come in contact with in a criminal case, a civil law dispute, or non-contentious matters. Proceedings in this court are generally open to the public. The second, and next instance after district courts, are the courts of appeal (Swedish: hovrätt), which deal with appeals against decisions of the district courts. The third and final instance, in a civil or criminal case, is the Supreme Court (Swedish: Högsta domstolen).",
-    },
-
-    // from: https://www.kriminalvarden.se/fangelse-frivard-och-hakte/fangelse/vara-anstalter/
-    prisons: {
-        value: "prisons",
-        name: "Prisons",
-        count: 45,
-        averageCoord: [16.046506022222225,59.19030015555556],
-        description: "While every prison serves the same basic purpose, the prisons in Sweden have different classifications of security -- from 1 to 3, where 1 is the highest classification and 3 is the lowest.",
     },
 
     // from: https://www.kronansapotek.se/store-finder/
@@ -57,6 +48,15 @@ const METADATA = {
         description: "'Kronans Apotek' is a Swedish pharmacy company, and the third largest pharmacy chain in the country. It was founded in 1907 with history going back to the early 18th century.",
     },
 
+    // from: https://www.kriminalvarden.se/fangelse-frivard-och-hakte/fangelse/vara-anstalter/
+    prisons: {
+        value: "prisons",
+        name: "Prisons",
+        count: 45,
+        averageCoord: [16.046506022222225,59.19030015555556],
+        description: "While every prison serves the same basic purpose, the prisons in Sweden have different classifications of security – from 1 to 3, where 1 is the highest classification and 3 is the lowest.",
+    },
+
     // from: https://www.max.se/hitta-max/restauranger/
 	// how: each individual restaurant has its own page with its own metadata, including coordinates -> extract these coordinates with scraping or by copying the 'MAX.restaurant' object
     max: {
@@ -64,7 +64,7 @@ const METADATA = {
         name: "MAX hamburgers",
         count: 134,
         averageCoord: [15.899692751492545,59.223979081343295],
-        description: "MAX Burgers AB is the oldest hamburger restaurant chain in Sweden. Before the 1990s, most of their locations and popularity was in northern Sweden. Today though, MAX is a nationwide fast-food chain, and so is their popularity, with For nine consecutive years, Max has had the most satisfied customers among the nationwide fast food chains in Sweden, beating McDonald's and Burger King by large margins.",
+        description: "MAX Burgers AB is the oldest chain of hamburger fast food restaurants in Sweden. These days they're nationwide, but before the 1990s most of their locations and popularity was in northern Sweden.",
     },
 
     // from: https://polisen.se/api/policestations
@@ -74,7 +74,7 @@ const METADATA = {
         name: "Police stations",
         count: 274,
         averageCoord: [15.355998115328468,59.289423144525585],
-        description: "<no description needed>",
+        description: "&#60;no description needed&#62;",
     },
 
     // from: https://github.com/wri/global-power-plant-database
@@ -84,7 +84,7 @@ const METADATA = {
         name: "Power plants",
         count: 168,
         averageCoord: [16.20785595238095,61.71807321428572],
-        description: "Most energy production in Sweden comes from hydro/water power and nuclear power. The energy sources for power plants in Sweden are hydro at 142 power plants, wind: 10, biomass: 8, nuclear: 3, gas: 3, oil: 1, coal: 1.",
+        description: "Most energy production in Sweden comes from hydro power and nuclear power. The energy sources for power plants in Sweden are hydro at 142 power plants, wind at 10, biomass at 8, nuclear at 3, gas at 3, oil at 1, and coal at 1.",
     },
 
     // from: https://bee.se/kundservice/laddkarta/
@@ -94,7 +94,7 @@ const METADATA = {
         name: "EV charging stations",
         count: 446,
         averageCoord: [15.343572544843065,59.03586594618839],
-        description: "An EV charging station is a machine that supplies electric energy for the recharging of electric vehicles. The displayed data is not of all charging stations in the Sweden, but just those of one of the leading EV charging operators, a company called 'Bee'.",
+        description: "An EV charging station is a machine that supplies electric energy for the recharging of electric vehicles. The displayed data is not of all charging stations in Sweden, but just those of one of the leading EV charging operators, a company called 'Bee'.",
     },
 
     // from: hitta.se
@@ -115,7 +115,7 @@ const METADATA = {
         name: "Hospitals",
         count: 175,
         averageCoord: [15.72708045371428,59.34572754114289],
-        description: "<no description needed>",
+        description: "&#60;no description needed&#62;",
     },
 
     // from: openstreetmap.org
@@ -126,7 +126,7 @@ const METADATA = {
         name: "Fire stations",
         count: 488,
         averageCoord: [15.295312813729504,59.174471618032825],
-        description: "<no description needed>",
+        description: "&#60;no description needed&#62;",
     },
 
     // from: systembolaget.se/butiker-ombud/
