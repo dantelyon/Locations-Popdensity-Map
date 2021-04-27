@@ -26,9 +26,18 @@
         </div>
         <div class="legend-info hiddenOnMobile">
             <div class="legend-pins">
-                <div><img class="blue pin" src="./pin-yellow.png">  = The average coordinate of the selected place</div>
-                <div><img class="pink pin" src="./pin-yellow.png">  = The average coordinate of ALL places</div>
-                <div><img class="green pin" src="./pin-yellow.png">  = The center of population</div>
+                <div>
+                    <input type="checkbox" name="averageSelected" checked disabled>
+                    <label for="averageSelected"><img class="averageSelected legend-pin" src="./pin-yellow.png">  = The average coordinate of the selected place</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="averageAll" autocomplete="off">
+                    <label for="averageAll"><img class="averageAll legend-pin" src="./pin-yellow.png">  = The average coordinate of ALL places</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="centerPop" autocomplete="off">
+                    <label for="centerPop"><img class="centerPop legend-pin" src="./pin-yellow.png"> = The center of population</label>
+                </div>
             </div>
             <div class="legend-popdensity">
                 <span class="legend-popdensity-title">population density (inhabitant per km²)</span>

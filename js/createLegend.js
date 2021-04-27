@@ -37,6 +37,13 @@ for (let place in METADATA) {
     document.querySelector(".legend-dropdown").appendChild(option);
 }
 
+document.querySelector("input[name=averageAll]").addEventListener("change", togglePin)
+document.querySelector("input[name=centerPop]").addEventListener("change", togglePin)
+function togglePin(event) {
+    let map_pin = document.querySelector(`div .${event.target.name}`);
+    map_pin.style.display = event.target.checked ? "block" : "none";
+}
+
 document.getElementById("show-more-info").addEventListener('click', showLegendInfo)
 function showLegendInfo() {
     const showHide = [".legend-info", ".location-description", ".count"];

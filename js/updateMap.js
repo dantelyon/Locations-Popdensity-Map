@@ -11,7 +11,7 @@ export default function updateLayer() {
   document.querySelector(".location-description span:nth-child(2)").innerHTML = METADATA[selectedPlace].description;
 
   const averageCoordPin = document.createElement('div');
-  averageCoordPin.className = 'blue pin yellow-pin';
+  averageCoordPin.className = 'averageSelected pin';
   const pin = new mapboxgl.Marker(averageCoordPin).setLngLat(METADATA[selectedPlace].averageCoord).addTo(map);
   
   if (previousPin) {

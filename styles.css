@@ -23,18 +23,16 @@ body {
   box-shadow: 0 0 0px 4px black;
   background-color: black;
 }
-.yellow-pin {
+.pin {
   background: black no-repeat url("./pin-yellow.png");
   display: block;
-}
-.pin {
   width: 11px;
   height: 11px;
   border-radius: 50%;
 }
-.green {box-shadow: 0 0 0px 2px #df0;}
-.pink {box-shadow: 0 0 0px 2px rgb(255, 0, 221);}
-.blue {box-shadow: 0 0 0px 2px rgb(0, 26, 255);}
+.averageSelected {box-shadow: 0 0 0px 2px rgb(80, 255, 0);}
+.averageAll {box-shadow: 0 0 0px 2px rgb(247, 0, 255);}
+.centerPop {box-shadow: 0 0 0px 2px rgb(0, 255, 231);}
 
 
 /***************** MAP LEGEND **************/
@@ -57,7 +55,12 @@ body {
 .legend a {
   color: #67b0ef;
 }
-
+.legend-pin {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
 .legend-info {
   border-top: 1px solid #676060;
 }
@@ -76,7 +79,6 @@ body {
 
 .legend-title {font-weight: bold;}
 .legend-location > * {margin: 5px 0px;}
-.legend-info .pin {margin-right: 5px;}
 
 .legend-dropdown {
   padding: 5px;
