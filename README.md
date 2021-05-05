@@ -3,7 +3,7 @@
 
 **Where?** [Live demo](https://dd-placesmap.netlify.app/)
 
-**What?** A map showing how population density of swedish munincipalities correlates with the locations of fifteen different places, such as hospitals and power plants.
+**What?** A map showing how population density of Swedish munincipalities correlates with the locations of fifteen different places, such as hospitals and power plants.
 
 **Why?** I like maps, and population density was one of the ideas I had for exploring and better understanding the options that are available for creating web-based map solutions. Before this project, the only option I was aware of was Google Maps.
 
