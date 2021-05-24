@@ -3,7 +3,7 @@
 <head>
     <title>Mapbox Project</title>
     <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Daniel Dahlberg">
     <meta name="description" content="A map which shows the population density of Sweden and how it is correlated with the locations of places">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
@@ -27,23 +27,23 @@
         <div class="legend-info hiddenOnMobile">
             <div class="legend-pins">
                 <div>
-                    <input type="checkbox" name="averageSelected" checked disabled>
-                    <label for="averageSelected"><img class="averageSelected legend-pin" src="./pin-yellow.png">  = The average coordinate of the selected place</label>
+                    <input type="checkbox" id="averageSelected-checkbox" name="averageSelected" checked disabled>
+                    <label for="averageSelected-checkbox"><img class="averageSelected legend-pin" src="./pin-yellow.png" alt="map pin">  = The average coordinate of the selected place</label>
                 </div>
                 <div>
-                    <input type="checkbox" name="averageAll" autocomplete="off">
-                    <label for="averageAll"><img class="averageAll legend-pin" src="./pin-yellow.png">  = The average coordinate of ALL places</label>
+                    <input type="checkbox" id="averageAll-checkbox" name="averageAll" autocomplete="off">
+                    <label for="averageAll-checkbox"><img class="averageAll legend-pin" src="./pin-yellow.png" alt="map pin">  = The average coordinate of ALL places</label>
                 </div>
                 <div>
-                    <input type="checkbox" name="centerPop" autocomplete="off">
-                    <label for="centerPop"><img class="centerPop legend-pin" src="./pin-yellow.png"> = The center of population</label>
+                    <input type="checkbox" id="centerPop-checkbox" name="centerPop" autocomplete="off">
+                    <label for="centerPop-checkbox"><img class="centerPop legend-pin" src="./pin-yellow.png" alt="map pin"> = The center of population</label>
                 </div>
             </div>
             <div class="legend-popdensity">
                 <span class="legend-popdensity-title">population density (inhabitant per km²)</span>
             </div>
         </div>
-        <div href="#" onclick="showInfo()" id="show-more-info">Show <span id="moreless">more</span> info...</div>
+        <div id="show-more-info">Show <span id="moreless">more</span> info...</div>
     </div>
 
     <script src="js/createMap.js" type="module"></script>
