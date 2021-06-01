@@ -1,5 +1,5 @@
 
-# Locations x Population density
+# Map Data Correlation
 
 **Where?** [Live demo](https://dd-placesmap.netlify.app/)
 
