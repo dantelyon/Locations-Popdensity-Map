@@ -1,7 +1,7 @@
 
 # Map Data Correlation
 
-**Where?** [Live demo](https://dd-placesmap.netlify.app/)
+**Where?** [Live demo](https://dd-mapcorrelation.netlify.app)
 
 **What?** A map showing how population density of Swedish munincipalities correlates with the locations of fifteen different places, such as hospitals and power plants.
 
