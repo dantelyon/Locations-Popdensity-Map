@@ -1,8 +1,11 @@
 
 import map from "./createMap.js";
 import METADATA from "./METADATA.js";
+import {averageSelected} from "./createPins.js";
+
 let previousLayer = "";
 let previousPin = null;
+
 
 export default function updateLayer() {
   const selectedPlace = document.querySelector(".legend-dropdown").value;
@@ -10,15 +13,16 @@ export default function updateLayer() {
   document.querySelector(".count span:nth-child(2)").textContent = METADATA[selectedPlace].count;
   document.querySelector(".location-description span:nth-child(2)").innerHTML = METADATA[selectedPlace].description;
 
-  const averageCoordPin = document.createElement('div');
-  averageCoordPin.className = 'averageSelected pin';
-  const pin = new mapboxgl.Marker(averageCoordPin).setLngLat(METADATA[selectedPlace].averageCoord).addTo(map);
+  const averagePin = averageSelected(METADATA[selectedPlace].averageCoord)
+
+  averagePin.addTo(map);
   
+
   if (previousPin) {
     previousPin.remove();
     previousPin = null;
   }
-  previousPin = pin;
+  previousPin = averagePin;
   
   if (map.getLayer(previousLayer)) map.removeLayer(previousLayer);
   if (map.getSource(previousLayer)) map.removeSource(previousLayer);
