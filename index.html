@@ -8,7 +8,9 @@
     <meta name="description" content="A map which shows the population density of Sweden and how it is correlated with the locations of places">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet'/>
-	<link href="styles.css" rel="stylesheet" type="text/css">
+	<link href="css/index.css" rel="stylesheet" type="text/css">
+    <link href="css/pins.css" rel="stylesheet" type="text/css">
+    <link href="css/legend.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="data:;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">
 </head>
 <body>
@@ -28,15 +30,15 @@
             <div class="legend-pins">
                 <div>
                     <input type="checkbox" id="averageSelected-checkbox" name="averageSelected" checked disabled>
-                    <label for="averageSelected-checkbox"><img class="averageSelected legend-pin" src="./pin-yellow.png" alt="map pin">  = The average coordinate of the selected place</label>
+                    <label for="averageSelected-checkbox"><img class="averageSelected legend-pin" src="assets/pin-yellow.png" alt="map pin">  = The average coordinate of the selected place</label>
                 </div>
                 <div>
                     <input type="checkbox" id="averageAll-checkbox" name="averageAll" autocomplete="off">
-                    <label for="averageAll-checkbox"><img class="averageAll legend-pin" src="./pin-yellow.png" alt="map pin">  = The average coordinate of ALL places</label>
+                    <label for="averageAll-checkbox"><img class="averageAll legend-pin" src="assets/pin-yellow.png" alt="map pin">  = The average coordinate of ALL places</label>
                 </div>
                 <div>
                     <input type="checkbox" id="centerPop-checkbox" name="centerPop" autocomplete="off">
-                    <label for="centerPop-checkbox"><img class="centerPop legend-pin" src="./pin-yellow.png" alt="map pin"> = The center of population</label>
+                    <label for="centerPop-checkbox"><img class="centerPop legend-pin" src="assets/pin-yellow.png" alt="map pin"> = The center of population</label>
                 </div>
             </div>
             <div class="legend-popdensity">
@@ -48,5 +50,6 @@
 
     <script src="js/createMap.js" type="module"></script>
     <script src="js/createLegend.js" type="module"></script>
+    <script src="js/index.js" type="module"></script>
 </body>
 </html>

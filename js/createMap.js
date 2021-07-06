@@ -1,7 +1,7 @@
 
 import updateMap from "./updateMap.js";
 
-mapboxgl.accessToken = process.env.TOKEN || 'pk.eyJ1IjoiZGlnaHQiLCJhIjoiY2p4ZW5nanRjMG9wMzNvczhxOXprMXl4NiJ9.fmrU8kIKNnTnb6KyJ9Y1Hw';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGlnaHQiLCJhIjoiY2p4ZW5nanRjMG9wMzNvczhxOXprMXl4NiJ9.fmrU8kIKNnTnb6KyJ9Y1Hw';
 
 if (!mapboxgl.supported()) alert('Your browser does not support Mapbox GL');
 

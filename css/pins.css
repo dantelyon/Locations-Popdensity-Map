@@ -1,0 +1,22 @@
+
+.default-pin {
+  display: block;
+  opacity: 0.7;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  box-shadow: 0 0 0px 4px black;
+  background-color: black;
+}
+
+.pin {
+  background: black no-repeat url("../assets/pin-yellow.png");
+  display: block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.averageSelected {box-shadow: 0 0 0px 2px rgb(80, 255, 0);}
+.averageAll {box-shadow: 0 0 0px 2px rgb(247, 0, 255);}
+.centerPop {box-shadow: 0 0 0px 2px rgb(0, 255, 231);}
