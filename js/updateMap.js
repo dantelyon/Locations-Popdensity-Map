@@ -1,7 +1,7 @@
 
 import map from "./createMap.js";
 import METADATA from "./METADATA.js";
-import {averageSelected} from "./createPins.js";
+import create_map_pin from "./createPin.js";
 
 let previousLayer = "";
 let previousPin = null;
@@ -10,14 +10,15 @@ let previousPin = null;
 export default function updateLayer() {
   const selectedPlace = document.querySelector(".legend-dropdown").value;
 
-  document.querySelector(".count span:nth-child(2)").textContent = METADATA[selectedPlace].count;
-  document.querySelector(".location-description span:nth-child(2)").innerHTML = METADATA[selectedPlace].description;
+  let locationCount = document.querySelector(".count span:nth-child(2)")
+  locationCount.textContent = METADATA[selectedPlace].count;
 
-  const averagePin = averageSelected(METADATA[selectedPlace].averageCoord)
+  let placeDescription = document.querySelector(".location-description span:nth-child(2)")
+  placeDescription.innerHTML = METADATA[selectedPlace].description;
 
+  const averagePin = create_map_pin('averageSelected', METADATA[selectedPlace].averageCoord)
   averagePin.addTo(map);
   
-
   if (previousPin) {
     previousPin.remove();
     previousPin = null;
